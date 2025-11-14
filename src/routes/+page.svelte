@@ -31,17 +31,20 @@
 		{
 			image: '/illustrations/ecommerce-app-product-page.png',
 			title: 'E-commerce Platform',
-			description: 'Full-featured online store with product management and customer experience optimization.'
+			description:
+				'Full-featured online store with product management and customer experience optimization.'
 		},
 		{
 			image: '/illustrations/slog-app-system-observation-manager.png',
 			title: 'System Observation',
-			description: 'Comprehensive system monitoring and observation tools for infrastructure management.'
+			description:
+				'Comprehensive system monitoring and observation tools for infrastructure management.'
 		},
 		{
 			image: '/illustrations/log-management-page.png',
 			title: 'Log Management',
-			description: 'Advanced log analysis and management system for security and operations monitoring.'
+			description:
+				'Advanced log analysis and management system for security and operations monitoring.'
 		}
 	];
 
@@ -80,7 +83,7 @@
 	function handleSwipe() {
 		const swipeThreshold = 50;
 		const diff = touchStartX - touchEndX;
-		
+
 		if (Math.abs(diff) > swipeThreshold) {
 			if (diff > 0) {
 				// Swipe left - next slide
@@ -470,7 +473,9 @@
 				class:transition-all={mounted}
 				style="transition-delay: 100ms"
 			>
-				<h2 class="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-secondary-900 mb-6">
+				<h2
+					class="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-secondary-900 mb-6"
+				>
 					See Our Work in <span class="text-primary-600">Action</span>
 				</h2>
 				<p class="text-xl sm:text-2xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
@@ -514,8 +519,12 @@
 					>
 						{#each solutions as solution}
 							<div class="w-full flex-shrink-0">
-								<div class="bg-white rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-secondary-200 sm:border-2 shadow-lg sm:shadow-xl mx-2 sm:mx-3 md:mx-4 h-full">
-									<div class="relative bg-gradient-to-br from-primary-50 to-accent-50 p-3 sm:p-4 md:p-6 lg:p-8 flex items-center justify-center min-h-[200px] sm:min-h-[280px] md:min-h-[380px] lg:min-h-[500px]">
+								<div
+									class="bg-white rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-secondary-200 sm:border-2 shadow-lg sm:shadow-xl mx-2 sm:mx-3 md:mx-4 h-full"
+								>
+									<div
+										class="relative bg-gradient-to-br from-primary-50 to-accent-50 p-3 sm:p-4 md:p-6 lg:p-8 flex items-center justify-center min-h-[200px] sm:min-h-[280px] md:min-h-[380px] lg:min-h-[500px]"
+									>
 										<img
 											src={solution.image}
 											alt={solution.title}
@@ -523,10 +532,14 @@
 										/>
 									</div>
 									<div class="p-3 sm:p-4 md:p-6 lg:p-8 text-center">
-										<h3 class="text-lg sm:text-xl md:text-2xl font-display font-bold text-secondary-900 mb-1.5 sm:mb-2 md:mb-3 px-2">
+										<h3
+											class="text-lg sm:text-xl md:text-2xl font-display font-bold text-secondary-900 mb-1.5 sm:mb-2 md:mb-3 px-2"
+										>
 											{solution.title}
 										</h3>
-										<p class="text-sm sm:text-base md:text-lg text-secondary-600 leading-relaxed max-w-2xl mx-auto px-3 sm:px-2">
+										<p
+											class="text-sm sm:text-base md:text-lg text-secondary-600 leading-relaxed max-w-2xl mx-auto px-3 sm:px-2"
+										>
 											{solution.description}
 										</p>
 									</div>
@@ -581,7 +594,8 @@
 					{#each solutions as _, index}
 						<button
 							on:click={() => goToSlide(index)}
-							class="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full transition-all touch-manipulation {currentSlide === index
+							class="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full transition-all touch-manipulation {currentSlide ===
+							index
 								? 'bg-primary-600 w-5 sm:w-6 md:w-8'
 								: 'bg-secondary-300 hover:bg-secondary-400 active:bg-secondary-500'}"
 							aria-label="Go to slide {index + 1}"
@@ -619,15 +633,9 @@
 					</h2>
 				</div>
 				<div class="space-y-2">
-					<div class="text-gray-300 text-lg">
-						United States
-					</div>
-					<div class="text-gray-300 text-lg">
-						Middle East
-					</div>
-					<div class="text-gray-300 text-lg">
-						India
-					</div>
+					<div class="text-gray-300 text-lg">United States</div>
+					<div class="text-gray-300 text-lg">Middle East</div>
+					<div class="text-gray-300 text-lg">India</div>
 				</div>
 			</div>
 			<div class="relative">

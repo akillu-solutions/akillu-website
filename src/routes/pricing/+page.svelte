@@ -1,5 +1,4 @@
 <script lang="ts">
-	import ContactForm from '$lib/components/ContactForm.svelte';
 	import SEOHead from '$lib/components/SEOHead.svelte';
 	import StructuredData from '$lib/components/StructuredData.svelte';
 
@@ -139,7 +138,7 @@
 		{
 			question: 'How do I get started?',
 			answer:
-				"Getting started is easy! Simply contact us through our contact form, email, or phone. We'll schedule a consultation to discuss your needs, answer any questions, and provide a detailed proposal with pricing and timeline. There's no obligation, and we're happy to help you understand how we can assist your business."
+				"Getting started is easy! Simply contact us through email, phone, or WhatsApp. We'll schedule a consultation to discuss your needs, answer any questions, and provide a detailed proposal with pricing and timeline. There's no obligation, and we're happy to help you understand how we can assist your business."
 		},
 		{
 			question: 'Do you provide training for the software you build?',
@@ -299,7 +298,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </section>
@@ -317,7 +315,7 @@
 					influenced each price. Your project may differ significantly.
 				</p>
 			</div>
-			
+
 			<!-- Important Note -->
 			<div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg p-6 mb-12">
 				<div class="flex items-start">
@@ -335,16 +333,17 @@
 					<div>
 						<h4 class="font-semibold text-yellow-900 mb-2">Important Note About Pricing</h4>
 						<p class="text-yellow-800">
-							The prices shown below are examples from previous projects and are provided for reference only. 
-							Actual pricing for your project will depend on your specific requirements, current market rates, 
-							technology choices, timeline, and other factors. Each project is unique, and pricing may change 
-							based on current requirements and market conditions. We provide detailed, customized quotes after 
-							understanding your unique needs. Contact us for an accurate estimate tailored to your project.
+							The prices shown below are examples from previous projects and are provided for
+							reference only. Actual pricing for your project will depend on your specific
+							requirements, current market rates, technology choices, timeline, and other factors.
+							Each project is unique, and pricing may change based on current requirements and
+							market conditions. We provide detailed, customized quotes after understanding your
+							unique needs. Contact us for an accurate estimate tailored to your project.
 						</p>
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="text-center mb-8">
 				<div class="flex items-center justify-center gap-3 mb-4">
 					<label for="currency-select" class="text-sm font-medium text-secondary-700"
@@ -461,13 +460,15 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
 									<span
-										><strong>Scope:</strong> 5-8 pages, responsive design, contact form, SEO optimization, custom email addresses</span
+										><strong>Scope:</strong> 5-8 pages, responsive design, contact form, SEO optimization,
+										custom email addresses</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
 									<span
-										><strong>Technology:</strong> SvelteKit, FormSpree, Zoho Mail, Cloudflare, Simple Analytics</span
+										><strong>Technology:</strong> SvelteKit, FormSpree, Zoho Mail, Cloudflare, Simple
+										Analytics</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
@@ -476,9 +477,7 @@
 								</li>
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
-									<span
-										><strong>Integrations:</strong> Contact form, Analytics, Mail provider</span
-									>
+									<span><strong>Integrations:</strong> Contact form, Analytics, Mail provider</span>
 								</li>
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
@@ -1047,25 +1046,79 @@
 </section>
 
 <!-- Get Custom Quote Section -->
-<section class="py-20 bg-white">
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<section
+	class="py-20 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white relative overflow-hidden"
+>
+	<!-- Animated background elements -->
+	<div class="absolute inset-0">
+		<div
+			class="absolute top-0 right-0 w-64 h-64 bg-accent-500/20 rounded-full blur-3xl animate-pulse-glow"
+		></div>
+		<div
+			class="absolute bottom-0 left-0 w-64 h-64 bg-accent-400/20 rounded-full blur-3xl animate-pulse-glow"
+			style="animation-delay: 2s;"
+		></div>
+	</div>
+
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 		<div class="max-w-4xl mx-auto">
 			<div class="text-center mb-12">
-				<h2 class="text-4xl font-display font-bold text-secondary-900 mb-6">Get a Custom Quote</h2>
-				<p class="text-xl text-secondary-600 max-w-2xl mx-auto">
-					Ready to get started? Fill out the form below and we'll provide you with a detailed quote
+				<div class="inline-block mb-6">
+					<div
+						class="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto border-2 border-white/20"
+					>
+						<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+							/>
+						</svg>
+					</div>
+				</div>
+				<h2 class="text-4xl sm:text-5xl font-display font-bold mb-6">Get a Custom Quote</h2>
+				<p class="text-xl text-primary-100 max-w-2xl mx-auto leading-relaxed">
+					Ready to get started? Contact us directly and we'll provide you with a detailed quote
 					tailored to your specific needs.
 				</p>
 			</div>
-			<div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
-				<ContactForm />
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a
+					href="/contact"
+					class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl"
+				>
+					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+						/>
+					</svg>
+					Contact Us
+				</a>
+				<a
+					href="/services"
+					class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white/30 hover:bg-white/10 hover:border-white/50 transition-all backdrop-blur-sm"
+				>
+					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+						/>
+					</svg>
+					View Services
+				</a>
 			</div>
 		</div>
 	</div>
 </section>
 
 <!-- FAQ Section -->
-<section class="py-20 bg-white">
+<section class="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="max-w-4xl mx-auto">
 			<div class="text-center mb-16">
@@ -1080,7 +1133,7 @@
 			<div class="space-y-4">
 				{#each faqs as faq, index}
 					<div
-						class="bg-white border-2 border-secondary-200 rounded-xl overflow-hidden transition-all hover:border-primary-300 hover:shadow-lg"
+						class="bg-white border-2 border-secondary-200 rounded-xl overflow-hidden transition-all hover:border-primary-300 hover:shadow-xl hover-lift"
 					>
 						<button
 							type="button"
