@@ -26,8 +26,8 @@
 </script>
 
 <header
-	class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 {scrolled
-		? 'glass-header shadow-xl border-b border-white/20'
+	class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b-0 {scrolled
+		? 'glass-header shadow-xl'
 		: 'bg-transparent'}"
 >
 	<nav class="container mx-auto px-4 sm:px-6 lg:px-8">
