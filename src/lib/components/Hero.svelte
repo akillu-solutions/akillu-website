@@ -68,16 +68,16 @@
 			>
 				<div class="relative z-10">
 					<div
-						class="relative bg-gradient-to-br from-primary-50 to-accent-50 rounded-3xl p-8 lg:p-12 border-2 border-primary-200/50"
+						class="relative bg-gradient-to-br from-primary-50 to-accent-50 rounded-3xl p-6 lg:p-8 xl:p-12 border-2 border-primary-200/50 shadow-2xl"
 					>
 						<div
-							class="absolute -inset-1 bg-gradient-to-r from-primary-600/10 to-accent-600/10 rounded-3xl blur-2xl"
+							class="absolute -inset-2 bg-gradient-to-r from-primary-600/20 to-accent-600/20 rounded-3xl blur-3xl"
 						></div>
 						<div class="relative">
 							<img
-								src="/illustrations/building-product.svg"
-								alt="Building Custom Software Solutions"
-								class="w-full max-w-lg mx-auto drop-shadow-lg"
+								src="/illustrations/system-dashboard.png"
+								alt="Custom Software Solutions Dashboard"
+								class="w-full max-w-2xl xl:max-w-3xl mx-auto drop-shadow-2xl rounded-lg"
 							/>
 						</div>
 					</div>
