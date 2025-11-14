@@ -14,43 +14,37 @@
 			number: '01',
 			title: 'Understanding the Requirements',
 			description:
-				'We engage directly with your team and users, working alongside them to understand the real problems that need solving. This hands-on approach ensures we capture the actual pain points, not just perceived ones.',
-			icon: icons.search
+				'We engage directly with your team and users, working alongside them to understand the real problems that need solving. This hands-on approach ensures we capture the actual pain points, not just perceived ones.'
 		},
 		{
 			number: '02',
 			title: 'Plan',
 			description:
-				'After thorough analysis, we provide detailed research and analytics on the problems we are solving. We create basic wireframes and propose a comprehensive software solution tailored to your needs.',
-			icon: icons.plan
+				'After thorough analysis, we provide detailed research and analytics on the problems we are solving. We create basic wireframes and propose a comprehensive software solution tailored to your needs.'
 		},
 		{
 			number: '03',
 			title: 'Prototyping & Design',
 			description:
-				'We prototype the UX design and build the UI, keeping you in the loop throughout the entire process. Your feedback is incorporated at every stage to ensure the solution meets your expectations.',
-			icon: icons.design
+				'We prototype the UX design and build the UI, keeping you in the loop throughout the entire process. Your feedback is incorporated at every stage to ensure the solution meets your expectations.'
 		},
 		{
 			number: '04',
 			title: 'Building the Product',
 			description:
-				'With the design approved, we build the product using modern technologies and best practices. We maintain regular communication and provide updates on progress.',
-			icon: icons.build
+				'With the design approved, we build the product using modern technologies and best practices. We maintain regular communication and provide updates on progress.'
 		},
 		{
 			number: '05',
 			title: 'Handover',
 			description:
-				'After delivery, we work closely with you for a couple of weeks to gather feedback and provide improvements based on the initial scope. Note: New feature requests are handled separately from this feedback phase.',
-			icon: icons.handshake
+				'After delivery, we work closely with you for a couple of weeks to gather feedback and provide improvements based on the initial scope. Note: New feature requests are handled separately from this feedback phase.'
 		},
 		{
 			number: '06',
 			title: 'Support & Maintenance',
 			description:
-				'We offer free support and maintenance for the first year. From the second year onwards, support is provided on a yearly cost-based model to ensure your software continues to perform optimally.',
-			icon: icons.support
+				'We offer free support and maintenance for the first year. From the second year onwards, support is provided on a yearly cost-based model to ensure your software continues to perform optimally.'
 		}
 	];
 </script>
@@ -115,46 +109,19 @@
 							class:transition-all={mounted}
 							style="transition-delay: {index * 150}ms"
 						>
-							<!-- Horizontal Branch Line (Tree Branch) - Dashed -->
-							<div
-								class="hidden lg:block absolute -z-10 opacity-60 group-hover:opacity-80 transition-opacity duration-300"
-								style="left: -2rem; top: 2.5rem; width: calc(2rem + 2.5rem + 0.5rem); height: 0; border-top: 2px dashed #476787;"
-							></div>
-
 							<div class="flex items-start gap-6 lg:gap-8">
-								<!-- Step Number & Icon -->
-								<div class="flex-shrink-0 relative overflow-visible">
-									<!-- Icon Container -->
-									<div class="relative">
-										<!-- Glow Effect -->
-										<div
-											class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-400/30 via-accent-400/30 to-primary-400/30 blur-xl group-hover:blur-2xl group-hover:opacity-75 transition-all duration-500 -z-10"
-											style="transform: scale(1.2);"
-										></div>
-										<!-- Icon Box -->
-										<div
-											class="relative w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-primary-500/40 group-hover:scale-110 transition-all duration-300 z-10 p-3 lg:p-4"
-										>
-											<!-- Inner White Circle for Contrast -->
-											<div class="absolute inset-1 rounded-xl bg-white/10 backdrop-blur-sm"></div>
-											<!-- Icon -->
-											<div
-												class="relative text-white z-10 flex items-center justify-center"
-												style="width: 28px; height: 28px;"
-											>
-												<div class="w-full h-full flex items-center justify-center">
-													{@html step.icon}
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Step Number -->
+								<!-- Step Number -->
+								<div class="flex-shrink-0 relative overflow-visible pt-4 lg:pt-6">
 									<div
-										class="absolute left-1/2 text-6xl lg:text-7xl font-display font-bold bg-gradient-to-br from-primary-200 via-accent-200 to-primary-300 bg-clip-text text-transparent -z-10 opacity-40 group-hover:opacity-70 transition-opacity whitespace-nowrap"
-										style="transform: translateX(-50%); top: 5.5rem;"
+										class="text-6xl lg:text-7xl font-display font-bold bg-gradient-to-br from-primary-400 via-accent-400 to-primary-500 bg-clip-text text-transparent opacity-60 group-hover:opacity-100 transition-opacity whitespace-nowrap"
 									>
 										{step.number}
 									</div>
+									<!-- Horizontal Branch Line (Tree Branch) - Dashed -->
+									<div
+										class="hidden lg:block absolute -z-10 opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+										style="left: -2rem; top: 6.5rem; width: calc(2rem + 2.5rem + 0.5rem); height: 0; border-top: 2px dashed #476787;"
+									></div>
 								</div>
 
 								<!-- Content -->

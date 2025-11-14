@@ -22,7 +22,6 @@
 						areaServed: contact.areaServed,
 						availableLanguage: contact.availableLanguage
 					},
-					sameAs: [contact.social.linkedin],
 					...customData
 				};
 

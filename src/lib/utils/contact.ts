@@ -14,9 +14,6 @@ export interface ContactInfo {
 		number: string;
 		display: string;
 	};
-	social: {
-		linkedin: string;
-	};
 	responseTime: string;
 	areaServed: string[];
 	availableLanguage: string[];

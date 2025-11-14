@@ -41,10 +41,4 @@
 	<meta property="og:image" content={ogImageUrl} />
 	<meta property="og:site_name" content="Akillu Solutions" />
 	<meta property="og:locale" content="en_US" />
-
-	<!-- Twitter -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content={seo.title} />
-	<meta name="twitter:description" content={seo.description} />
-	<meta name="twitter:image" content={ogImageUrl} />
 </svelte:head>
