@@ -22,16 +22,8 @@ export interface ContactInfo {
 export const contact: ContactInfo = contactData as ContactInfo;
 
 // Helper functions for common use cases
-export function getEmail(): string {
-	return contact.email;
-}
-
 export function getEmailLink(): string {
 	return `mailto:${contact.email}`;
-}
-
-export function getPhoneByCountry(country: string): Phone | undefined {
-	return contact.phones.find((phone) => phone.country === country);
 }
 
 export function getPhoneLink(phone: Phone): string {
