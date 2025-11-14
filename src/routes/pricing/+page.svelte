@@ -6,37 +6,69 @@
 	let openFaqIndex: number | null = null;
 	let selectedCurrency: 'USD' | 'INR' | 'AED' = 'AED';
 
+	// Exchange rates (approximate)
+	const exchangeRates = {
+		AED_TO_USD: 0.272, // 1 AED = 0.272 USD (or 1 USD = 3.67 AED)
+		AED_TO_INR: 24.14 // 1 AED = 24.14 INR
+	};
+
 	function toggleFaq(index: number) {
 		openFaqIndex = openFaqIndex === index ? null : index;
 	}
 
-	const priceData = {
-		'small-website': {
-			USD: '$2,500 - $5,000',
-			INR: '₹2,07,500 - ₹4,15,000',
-			AED: 'AED 9,175 - AED 18,350'
-		},
-		'web-app': {
-			USD: '$15,000 - $35,000',
-			INR: '₹12,45,000 - ₹29,05,000',
-			AED: 'AED 55,050 - AED 128,450'
-		},
-		ecommerce: {
-			USD: '$25,000 - $60,000',
-			INR: '₹20,75,000 - ₹49,80,000',
-			AED: 'AED 91,750 - AED 220,200'
-		},
-		crm: {
-			USD: '$30,000 - $75,000',
-			INR: '₹24,90,000 - ₹62,25,000',
-			AED: 'AED 110,100 - AED 275,250'
-		},
-		'mobile-app': {
-			USD: '$20,000 - $50,000',
-			INR: '₹16,60,000 - ₹41,50,000',
-			AED: 'AED 73,400 - AED 183,500'
-		}
+	// Base prices in AED (min, max)
+	const priceDataAED = {
+		'small-website': { min: 5000, max: 19000 },
+		'web-app': { min: 55000, max: 120000 },
+		ecommerce: { min: 90000, max: 220000 },
+		crm: { min: 90000, max: 275000 },
+		'mobile-app': { min: 60000, max: 185000 }
 	};
+
+	// Format number with commas
+	function formatNumber(num: number): string {
+		return num.toLocaleString('en-US');
+	}
+
+	// Format number in Indian format (lakhs)
+	function formatNumberINR(num: number): string {
+		return num.toLocaleString('en-IN');
+	}
+
+	// Convert AED to USD
+	function convertToUSD(aed: number): number {
+		return aed * exchangeRates.AED_TO_USD;
+	}
+
+	// Convert AED to INR
+	function convertToINR(aed: number): number {
+		return aed * exchangeRates.AED_TO_INR;
+	}
+
+	// Get formatted price string for a currency
+	function getPriceString(key: keyof typeof priceDataAED, currency: 'AED' | 'USD' | 'INR'): string {
+		const { min, max } = priceDataAED[key];
+		let minFormatted: string;
+		let maxFormatted: string;
+
+		if (currency === 'AED') {
+			minFormatted = `AED ${formatNumber(min)}`;
+			maxFormatted = `AED ${formatNumber(max)}`;
+		} else if (currency === 'USD') {
+			const minUSD = Math.round(convertToUSD(min));
+			const maxUSD = Math.round(convertToUSD(max));
+			minFormatted = `$${formatNumber(minUSD)}`;
+			maxFormatted = `$${formatNumber(maxUSD)}`;
+		} else {
+			// INR
+			const minINR = Math.round(convertToINR(min));
+			const maxINR = Math.round(convertToINR(max));
+			minFormatted = `₹${formatNumberINR(minINR)}`;
+			maxFormatted = `₹${formatNumberINR(maxINR)}`;
+		}
+
+		return `${minFormatted} - ${maxFormatted}`;
+	}
 
 	const faqs = [
 		{
@@ -308,8 +340,8 @@
 				</h2>
 				<p class="text-xl text-secondary-600 max-w-3xl mx-auto mb-6">
 					Here are examples of previous projects with pricing ranges and the key factors that
-					influenced each price. These are for reference only. Your project may differ
-					significantly.
+					influenced each price. These are for reference only. Your project may differ significantly.
+					Prices are non-inclusive of VAT.
 				</p>
 				<div class="flex items-center justify-center gap-3 mb-4">
 					<label for="currency-select" class="text-sm font-medium text-secondary-700"
@@ -320,13 +352,13 @@
 						bind:value={selectedCurrency}
 						class="px-4 py-2 border-2 border-primary-300 rounded-lg bg-white text-secondary-900 font-semibold focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all cursor-pointer"
 					>
-						<option value="USD">USD ($)</option>
-						<option value="INR">INR (₹)</option>
 						<option value="AED">AED</option>
+						<option value="USD">USD ($) (≈)</option>
+						<option value="INR">INR (₹) (≈)</option>
 					</select>
 				</div>
 				<p class="text-sm text-secondary-500 max-w-2xl mx-auto">
-					Exchange rates are approximate (1 USD ≈ 83 INR ≈ 3.67 AED) and may vary.
+					Conversions are approximate (1 AED ≈ $0.27 ≈ ₹24.14) and may vary.
 				</p>
 			</div>
 
@@ -370,20 +402,20 @@
 										<div
 											class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
 										>
-											<div class="text-xs font-medium opacity-90 mb-1">USD</div>
+											<div class="text-xs font-medium opacity-90 mb-1">USD (≈)</div>
 											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
-												{priceData['small-website'].USD}
+												{getPriceString('small-website', 'USD')}
 											</div>
 										</div>
 									{:else if selectedCurrency === 'INR'}
 										<div
 											class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
 										>
-											<div class="text-xs font-medium text-secondary-600 mb-1">INR</div>
+											<div class="text-xs font-medium text-secondary-600 mb-1">INR (≈)</div>
 											<div
 												class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight"
 											>
-												{priceData['small-website'].INR}
+												{getPriceString('small-website', 'INR')}
 											</div>
 										</div>
 									{:else}
@@ -394,7 +426,7 @@
 											<div
 												class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight"
 											>
-												{priceData['small-website'].AED}
+												{getPriceString('small-website', 'AED')}
 											</div>
 										</div>
 									{/if}
@@ -426,14 +458,13 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
 									<span
-										><strong>Scope:</strong> 5-8 pages, responsive design, contact form, basic SEO optimization</span
+										><strong>Scope:</strong> 5-8 pages, responsive design, contact form, SEO optimization, custom email addresses</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
 									<span
-										><strong>Technology:</strong> Modern static site generator or CMS (SvelteKit, WordPress,
-										etc.)</span
+										><strong>Technology:</strong> SvelteKit, FormSpree, Zoho Mail, Cloudflare, Simple Analytics</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
@@ -443,7 +474,7 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
 									<span
-										><strong>Integrations:</strong> Minimal: contact form and basic analytics</span
+										><strong>Integrations:</strong> Contact form, Analytics, Mail provider</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
@@ -495,20 +526,20 @@
 										<div
 											class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
 										>
-											<div class="text-xs font-medium opacity-90 mb-1">USD</div>
+											<div class="text-xs font-medium opacity-90 mb-1">USD (≈)</div>
 											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
-												{priceData['web-app'].USD}
+												{getPriceString('web-app', 'USD')}
 											</div>
 										</div>
 									{:else if selectedCurrency === 'INR'}
 										<div
 											class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
 										>
-											<div class="text-xs font-medium text-secondary-600 mb-1">INR</div>
+											<div class="text-xs font-medium text-secondary-600 mb-1">INR (≈)</div>
 											<div
 												class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight"
 											>
-												{priceData['web-app'].INR}
+												{getPriceString('web-app', 'INR')}
 											</div>
 										</div>
 									{:else}
@@ -519,7 +550,7 @@
 											<div
 												class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight"
 											>
-												{priceData['web-app'].AED}
+												{getPriceString('web-app', 'AED')}
 											</div>
 										</div>
 									{/if}
@@ -632,20 +663,20 @@
 										<div
 											class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
 										>
-											<div class="text-xs font-medium opacity-90 mb-1">USD</div>
+											<div class="text-xs font-medium opacity-90 mb-1">USD (≈)</div>
 											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
-												{priceData['ecommerce'].USD}
+												{getPriceString('ecommerce', 'USD')}
 											</div>
 										</div>
 									{:else if selectedCurrency === 'INR'}
 										<div
 											class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
 										>
-											<div class="text-xs font-medium text-secondary-600 mb-1">INR</div>
+											<div class="text-xs font-medium text-secondary-600 mb-1">INR (≈)</div>
 											<div
 												class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight"
 											>
-												{priceData['ecommerce'].INR}
+												{getPriceString('ecommerce', 'INR')}
 											</div>
 										</div>
 									{:else}
@@ -656,7 +687,7 @@
 											<div
 												class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight"
 											>
-												{priceData['ecommerce'].AED}
+												{getPriceString('ecommerce', 'AED')}
 											</div>
 										</div>
 									{/if}
@@ -771,20 +802,20 @@
 										<div
 											class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
 										>
-											<div class="text-xs font-medium opacity-90 mb-1">USD</div>
+											<div class="text-xs font-medium opacity-90 mb-1">USD (≈)</div>
 											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
-												{priceData['crm'].USD}
+												{getPriceString('crm', 'USD')}
 											</div>
 										</div>
 									{:else if selectedCurrency === 'INR'}
 										<div
 											class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
 										>
-											<div class="text-xs font-medium text-secondary-600 mb-1">INR</div>
+											<div class="text-xs font-medium text-secondary-600 mb-1">INR (≈)</div>
 											<div
 												class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight"
 											>
-												{priceData['crm'].INR}
+												{getPriceString('crm', 'INR')}
 											</div>
 										</div>
 									{:else}
@@ -795,7 +826,7 @@
 											<div
 												class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight"
 											>
-												{priceData['crm'].AED}
+												{getPriceString('crm', 'AED')}
 											</div>
 										</div>
 									{/if}
@@ -909,20 +940,20 @@
 										<div
 											class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
 										>
-											<div class="text-xs font-medium opacity-90 mb-1">USD</div>
+											<div class="text-xs font-medium opacity-90 mb-1">USD (≈)</div>
 											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
-												{priceData['mobile-app'].USD}
+												{getPriceString('mobile-app', 'USD')}
 											</div>
 										</div>
 									{:else if selectedCurrency === 'INR'}
 										<div
 											class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
 										>
-											<div class="text-xs font-medium text-secondary-600 mb-1">INR</div>
+											<div class="text-xs font-medium text-secondary-600 mb-1">INR (≈)</div>
 											<div
 												class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight"
 											>
-												{priceData['mobile-app'].INR}
+												{getPriceString('mobile-app', 'INR')}
 											</div>
 										</div>
 									{:else}
@@ -933,7 +964,7 @@
 											<div
 												class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight"
 											>
-												{priceData['mobile-app'].AED}
+												{getPriceString('mobile-app', 'AED')}
 											</div>
 										</div>
 									{/if}
