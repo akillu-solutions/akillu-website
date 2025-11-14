@@ -15,7 +15,7 @@
 		{
 			title: 'Custom Software Development',
 			description:
-				'Bespoke software built around your exact business workflows—no bloated features, no wasted spend.',
+				'Bespoke software that fits your business processes. No unnecessary features, just what you need to get the job done.',
 			icon: icons.computer
 		},
 		{
@@ -39,7 +39,7 @@
 		{
 			title: 'Artificial Intelligence Services',
 			description:
-				'AI-powered tools—from recruitment assistants to self-assessment systems, chatbots, and internal productivity apps—to automate decisions and optimize operations.',
+				'AI powered tools like self-assessment systems, chatbots, and productivity apps that help automate decisions and streamline your operations.',
 			icon: icons.ai
 		},
 		{
@@ -409,8 +409,7 @@
 						</h2>
 						<p class="text-xl text-secondary-600 mb-6 leading-relaxed">
 							Explore real-world case studies showcasing how we've helped SMEs transform their
-							operations with comprehensive software solutions—from custom development and AI
-							services to cloud infrastructure and CRM/ERP systems.
+							operations with our expertise.
 						</p>
 						<a
 							href="/case-studies"
@@ -684,9 +683,7 @@
 				>
 			</h2>
 			<p class="text-xl text-primary-100 mb-12 max-w-2xl mx-auto leading-relaxed">
-				Let's discuss how our comprehensive software solutions—from custom development and AI
-				services to cloud infrastructure and CRM/ERP systems—can help SMEs grow and thrive in
-				today's digital landscape.
+				Let's discuss how our services can help you grow and thrive in today's digital landscape.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-6 justify-center">
 				<a

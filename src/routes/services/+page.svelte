@@ -69,7 +69,7 @@
 					title: 'Custom Software Development',
 					icon: icons.computer,
 					description:
-						'Bespoke software built around your exact business workflows—no bloated features, no wasted spend.',
+						'Bespoke software that fits your business processes. No unnecessary features, just what you need to get the job done.',
 					features: [
 						'Business process analysis and optimization',
 						'Modern tech stack selection',
@@ -131,12 +131,12 @@
 					title: 'Artificial Intelligence Services',
 					icon: icons.ai,
 					description:
-						'AI-powered tools—from recruitment assistants to self-assessment systems, chatbots, and internal productivity apps—to automate decisions and optimize operations.',
+						'AI powered tools like self-assessment systems, chatbots, and productivity apps that help automate decisions and streamline your operations.',
 					features: [
-						'Recruitment and HR assistants',
 						'Chatbots and virtual assistants',
 						'Self-assessment systems',
 						'Internal productivity applications',
+						'Recruitment and HR assistants',
 						'Decision automation tools'
 					]
 				},
@@ -198,7 +198,7 @@
 					id: 'custom-crm',
 					title: 'Custom CRM Development',
 					icon: icons.analytics,
-					description: 'CRMs built around your actual sales process—not the other way around.',
+					description: 'CRMs built around your actual sales process, not the other way around.',
 					features: [
 						'Sales process alignment',
 						'Custom workflow design',

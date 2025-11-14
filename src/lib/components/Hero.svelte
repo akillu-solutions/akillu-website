@@ -35,9 +35,8 @@
 				<p
 					class="text-xl sm:text-2xl text-secondary-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
 				>
-					Comprehensive software solutions—from custom development and AI services to cloud
-					infrastructure and CRM/ERP systems—designed to help SMEs grow and thrive. Serving India
-					and expanding to UAE.
+					We help SMEs grow with comprehensive software solutions ranging from custom development,
+					AI, and automation to database management, cloud, and CRM/ERP systems.
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 					<a

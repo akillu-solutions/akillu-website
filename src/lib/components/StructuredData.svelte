@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { contact, getPrimaryPhoneForStructuredData } from '$lib/utils/contact';
-	
+
 	export function getStructuredData(type: string, customData: Record<string, any>, url: URL) {
 		const baseUrl = url.origin;
 

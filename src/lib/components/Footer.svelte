@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { contact, getEmailLink, getPhoneLink, getWhatsAppLink } from '$lib/utils/contact';
-	
+
 	const currentYear = new Date().getFullYear();
 </script>
 
@@ -29,17 +29,15 @@
 					</span>
 				</div>
 				<p class="text-gray-400 mb-6 max-w-md leading-relaxed">
-					Comprehensive software solutions—from custom development and AI services to cloud
-					infrastructure and CRM/ERP systems—designed to help SMEs grow and thrive. Serving clients
-					internationally, primarily the US, Middle East, and India.
+					Comprehensive software solutions, including custom development, AI services, cloud
+					infrastructure, and CRM/ERP systems, designed to help SMEs grow and thrive.
 				</p>
 				<div class="border-t border-white/10 pt-6">
 					<h4 class="text-white font-semibold mb-4 text-sm">Contact</h4>
 					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
 						<div class="text-gray-400 text-sm">
-							<a
-								href={getEmailLink()}
-								class="hover:text-accent-400 transition-colors break-all">{contact.email}</a
+							<a href={getEmailLink()} class="hover:text-accent-400 transition-colors break-all"
+								>{contact.email}</a
 							>
 						</div>
 						{#each contact.phones as phone}

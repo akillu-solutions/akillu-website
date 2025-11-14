@@ -45,7 +45,7 @@
 					</p>
 					<p class="text-lg text-secondary-600 leading-relaxed">
 						Our commitment to transparency, quality, and ongoing support sets us apart. We don't
-						just deliver software—we partner with you for long-term success.
+						just deliver software. We partner with you for long-term success.
 					</p>
 				</div>
 				<div class="bg-gradient-to-br from-primary-100 to-accent-100 rounded-2xl p-12">
@@ -116,7 +116,7 @@
 					</div>
 					<h3 class="text-xl font-semibold text-secondary-900 mb-3">Partnership</h3>
 					<p class="text-secondary-600">
-						We're not just vendors—we're your technology partners committed to your long-term
+						We're not just vendors. We're your technology partners committed to your long-term
 						success.
 					</p>
 				</div>

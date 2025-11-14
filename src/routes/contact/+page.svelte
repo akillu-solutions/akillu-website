@@ -55,17 +55,17 @@
 								/>
 							</svg>
 						</div>
-					<div>
-						<h3 class="text-lg font-semibold text-secondary-900 mb-2">Phone</h3>
-						{#each contact.phones as phone}
-							<p class="text-secondary-600 mb-1">
-								<a href={getPhoneLink(phone)} class="hover:text-primary-600 transition-colors"
-									>{phone.display}</a
-								>
-								<span class="text-secondary-500"> ({phone.country})</span>
-							</p>
-						{/each}
-					</div>
+						<div>
+							<h3 class="text-lg font-semibold text-secondary-900 mb-2">Phone</h3>
+							{#each contact.phones as phone}
+								<p class="text-secondary-600 mb-1">
+									<a href={getPhoneLink(phone)} class="hover:text-primary-600 transition-colors"
+										>{phone.display}</a
+									>
+									<span class="text-secondary-500"> ({phone.country})</span>
+								</p>
+							{/each}
+						</div>
 					</div>
 					<div class="flex items-start space-x-4">
 						<div
@@ -80,15 +80,15 @@
 								/>
 							</svg>
 						</div>
-					<div>
-						<h3 class="text-lg font-semibold text-secondary-900 mb-2">Email</h3>
-						<p class="text-secondary-600 mb-1">
-							<a href={getEmailLink()} class="hover:text-primary-600 transition-colors"
-								>{contact.email}</a
-							>
-						</p>
-						<p class="text-sm text-secondary-500">We respond within {contact.responseTime}</p>
-					</div>
+						<div>
+							<h3 class="text-lg font-semibold text-secondary-900 mb-2">Email</h3>
+							<p class="text-secondary-600 mb-1">
+								<a href={getEmailLink()} class="hover:text-primary-600 transition-colors"
+									>{contact.email}</a
+								>
+							</p>
+							<p class="text-sm text-secondary-500">We respond within {contact.responseTime}</p>
+						</div>
 					</div>
 					<div class="flex items-start space-x-4">
 						<div
@@ -100,18 +100,18 @@
 								/>
 							</svg>
 						</div>
-					<div>
-						<h3 class="text-lg font-semibold text-secondary-900 mb-2">WhatsApp</h3>
-						<p class="text-secondary-600 mb-1">
-							<a
-								href={getWhatsAppLink()}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="hover:text-[#25D366] transition-colors">{contact.whatsapp.display}</a
-							>
-						</p>
-						<p class="text-sm text-secondary-500">Chat with us instantly</p>
-					</div>
+						<div>
+							<h3 class="text-lg font-semibold text-secondary-900 mb-2">WhatsApp</h3>
+							<p class="text-secondary-600 mb-1">
+								<a
+									href={getWhatsAppLink()}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="hover:text-[#25D366] transition-colors">{contact.whatsapp.display}</a
+								>
+							</p>
+							<p class="text-sm text-secondary-500">Chat with us instantly</p>
+						</div>
 					</div>
 				</div>
 
@@ -140,8 +140,8 @@
 				>
 					<h3 class="text-xl font-display font-semibold text-secondary-900 mb-3">Response Time</h3>
 					<p class="text-secondary-600 mb-4">
-						We typically respond to all inquiries within {contact.responseTime} during business days. For urgent
-						matters, please call us directly or message us on WhatsApp.
+						We typically respond to all inquiries within {contact.responseTime} during business days.
+						For urgent matters, please call us directly or message us on WhatsApp.
 					</p>
 					<div class="flex flex-col sm:flex-row gap-3">
 						{#each contact.phones as phone}

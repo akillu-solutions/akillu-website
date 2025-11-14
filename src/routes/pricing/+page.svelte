@@ -308,7 +308,8 @@
 				</h2>
 				<p class="text-xl text-secondary-600 max-w-3xl mx-auto mb-6">
 					Here are examples of previous projects with pricing ranges and the key factors that
-					influenced each price. These are for reference only—your project may differ significantly.
+					influenced each price. These are for reference only. Your project may differ
+					significantly.
 				</p>
 				<div class="flex items-center justify-center gap-3 mb-4">
 					<label for="currency-select" class="text-sm font-medium text-secondary-700"
@@ -442,12 +443,12 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
 									<span
-										><strong>Integrations:</strong> Minimal—contact form and basic analytics</span
+										><strong>Integrations:</strong> Minimal: contact form and basic analytics</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
-									<span><strong>Complexity:</strong> Low—standard website features</span>
+									<span><strong>Complexity:</strong> Low: standard website features</span>
 								</li>
 							</ul>
 						</div>
@@ -571,8 +572,8 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-accent-600 font-bold mt-1">•</span>
 									<span
-										><strong>Complexity:</strong> Medium—custom business logic, data relationships, workflow
-										automation</span
+										><strong>Complexity:</strong> Medium: custom business logic, data relationships,
+										workflow automation</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
@@ -722,7 +723,7 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
 									<span
-										><strong>Complexity:</strong> High—complex business logic, multiple integrations,
+										><strong>Complexity:</strong> High: complex business logic, multiple integrations,
 										scalability requirements</span
 									>
 								</li>
@@ -854,7 +855,7 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-accent-600 font-bold mt-1">•</span>
 									<span
-										><strong>Complexity:</strong> High—complex data relationships, automation rules,
+										><strong>Complexity:</strong> High: complex data relationships, automation rules,
 										permission management</span
 									>
 								</li>
@@ -998,8 +999,8 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
 									<span
-										><strong>Complexity:</strong> Medium to High—depends on features, integrations, and
-										platform requirements</span
+										><strong>Complexity:</strong> Medium to High: depends on features, integrations,
+										and platform requirements</span
 									>
 								</li>
 							</ul>

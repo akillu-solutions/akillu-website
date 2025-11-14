@@ -177,7 +177,10 @@
 					<h2 class="text-3xl font-display font-bold text-secondary-900 mb-4">11. Contact Us</h2>
 					<p>If you have any questions about this Privacy Policy, please contact us at:</p>
 					<p class="mt-4">
-						<strong>Email:</strong> <a href={getEmailLink()} class="text-primary-600 hover:text-primary-700 underline">{contact.email}</a><br />
+						<strong>Email:</strong>
+						<a href={getEmailLink()} class="text-primary-600 hover:text-primary-700 underline"
+							>{contact.email}</a
+						><br />
 						<strong>Website:</strong>
 						<a href="/contact" class="text-primary-600 hover:text-primary-700 underline"
 							>Contact Page</a
