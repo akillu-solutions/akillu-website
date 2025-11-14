@@ -6,12 +6,11 @@
 	export let delay: number = 0;
 </script>
 
-<div
-	class="card-informational p-6 sm:p-8 h-full flex flex-col"
-	style="animation-delay: {delay}ms"
->
+<div class="card-informational p-6 sm:p-8 h-full flex flex-col" style="animation-delay: {delay}ms">
 	{#if image}
-		<div class="mb-5 sm:mb-6 relative overflow-hidden rounded-lg bg-gradient-to-br from-primary-50 to-accent-50 p-4 sm:p-6">
+		<div
+			class="mb-5 sm:mb-6 relative overflow-hidden rounded-lg bg-gradient-to-br from-primary-50 to-accent-50 p-4 sm:p-6"
+		>
 			<img src={image} alt={title} class="w-full h-32 sm:h-40 object-contain" />
 		</div>
 	{:else if icon}

@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { icons } from '$lib/utils/icons';
 	import { onMount } from 'svelte';
+	import SEOHead from '$lib/components/SEOHead.svelte';
+	import StructuredData from '$lib/components/StructuredData.svelte';
 
 	let mounted = false;
 	let activeCategory = '';
@@ -196,8 +198,7 @@
 					id: 'custom-crm',
 					title: 'Custom CRM Development',
 					icon: icons.analytics,
-					description:
-						'CRMs built around your actual sales process—not the other way around.',
+					description: 'CRMs built around your actual sales process—not the other way around.',
 					features: [
 						'Sales process alignment',
 						'Custom workflow design',
@@ -287,28 +288,48 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Services - Akillu Solutions</title>
-	<meta
-		name="description"
-		content="Comprehensive software services: custom development, mobile apps, web portals, cloud infrastructure, AI & automation, database management, and CRM/ERP solutions."
-	/>
-</svelte:head>
+<SEOHead
+	seoData={{
+		title: 'Services - Akillu Solutions',
+		description:
+			'Comprehensive software services: custom development, mobile apps, web portals, cloud infrastructure, AI & automation, database management, and CRM/ERP solutions.',
+		keywords:
+			'custom software development, web development, mobile app development, AI services, automation, CRM, ERP, cloud infrastructure, database management'
+	}}
+/>
+
+<StructuredData
+	type="Service"
+	data={{
+		serviceType: 'Software Development Services',
+		description:
+			'Comprehensive software services including custom development, mobile apps, web portals, cloud infrastructure, AI & automation, database management, and CRM/ERP solutions.'
+	}}
+/>
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 overflow-hidden">
+<section
+	class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 overflow-hidden"
+>
 	<div class="absolute inset-0">
-		<div class="absolute top-0 left-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl animate-pulse-glow"></div>
-		<div class="absolute bottom-0 right-0 w-96 h-96 bg-tertiary-500/10 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 2s;"></div>
+		<div
+			class="absolute top-0 left-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl animate-pulse-glow"
+		></div>
+		<div
+			class="absolute bottom-0 right-0 w-96 h-96 bg-tertiary-500/10 rounded-full blur-3xl animate-pulse-glow"
+			style="animation-delay: 2s;"
+		></div>
 	</div>
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 		<div class="max-w-3xl mx-auto text-center">
-			<h1 class="text-5xl sm:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-white via-accent-100 to-white bg-clip-text text-transparent">
+			<h1
+				class="text-5xl sm:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-white via-accent-100 to-white bg-clip-text text-transparent"
+			>
 				Our Services
 			</h1>
 			<p class="text-xl text-primary-100 leading-relaxed">
-				Comprehensive software solutions designed to help SMEs grow and thrive in today's
-				digital landscape.
+				Comprehensive software solutions designed to help SMEs grow and thrive in today's digital
+				landscape.
 			</p>
 		</div>
 	</div>
@@ -329,23 +350,29 @@
 				>
 					<div class="text-center mb-16">
 						<h2 class="text-4xl sm:text-5xl font-display font-bold text-secondary-900 mb-4">
-							<span class="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-700 bg-clip-text text-transparent">
+							<span
+								class="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-700 bg-clip-text text-transparent"
+							>
 								{category.category}
 							</span>
 						</h2>
-						<div class="w-24 h-1 bg-gradient-to-r from-primary-600 to-accent-600 mx-auto rounded-full"></div>
+						<div
+							class="w-24 h-1 bg-gradient-to-r from-primary-600 to-accent-600 mx-auto rounded-full"
+						></div>
 					</div>
 					<div class="space-y-24">
 						{#each category.services as service, serviceIndex}
-							<div 
-								id={service.id} 
+							<div
+								id={service.id}
 								class="scroll-mt-20 group"
 								class:opacity-0={!mounted}
 								class:translate-y-8={!mounted}
 								class:transition-all={mounted}
-								style="transition-delay: {(catIndex * 100) + (serviceIndex * 150)}ms"
+								style="transition-delay: {catIndex * 100 + serviceIndex * 150}ms"
 							>
-								<div class="bg-white rounded-2xl p-8 sm:p-10 lg:p-12 border-2 border-secondary-200 hover:border-primary-300 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1">
+								<div
+									class="bg-white rounded-2xl p-8 sm:p-10 lg:p-12 border-2 border-secondary-200 hover:border-primary-300 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1"
+								>
 									<div class="flex items-start gap-6 mb-6">
 										<div
 											class="w-20 h-20 bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0"
@@ -355,19 +382,25 @@
 											</div>
 										</div>
 										<div class="flex-grow">
-											<h3 class="text-3xl sm:text-4xl font-display font-bold text-secondary-900 mb-4 group-hover:text-primary-700 transition-colors">
+											<h3
+												class="text-3xl sm:text-4xl font-display font-bold text-secondary-900 mb-4 group-hover:text-primary-700 transition-colors"
+											>
 												{service.title}
 											</h3>
-											<p class="text-xl text-secondary-600 leading-relaxed">{service.description}</p>
+											<p class="text-xl text-secondary-600 leading-relaxed">
+												{service.description}
+											</p>
 										</div>
 									</div>
-									
+
 									<div class="border-t border-secondary-200 pt-8">
 										<ul class="space-y-4">
 											{#each service.features as feature}
 												<li class="flex items-start space-x-4 group/feature">
 													<div class="flex-shrink-0 mt-1">
-														<div class="w-6 h-6 bg-gradient-to-br from-accent-500 to-accent-600 rounded-lg flex items-center justify-center group-hover/feature:scale-110 transition-transform">
+														<div
+															class="w-6 h-6 bg-gradient-to-br from-accent-500 to-accent-600 rounded-lg flex items-center justify-center group-hover/feature:scale-110 transition-transform"
+														>
 															<svg
 																class="w-4 h-4 text-white"
 																fill="none"
@@ -383,7 +416,9 @@
 															</svg>
 														</div>
 													</div>
-													<span class="text-secondary-700 text-lg leading-relaxed pt-0.5">{feature}</span>
+													<span class="text-secondary-700 text-lg leading-relaxed pt-0.5"
+														>{feature}</span
+													>
 												</li>
 											{/each}
 										</ul>
@@ -399,7 +434,9 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 relative bg-gradient-to-br from-primary-600 via-primary-700 to-accent-700 text-white overflow-hidden">
+<section
+	class="py-20 relative bg-gradient-to-br from-primary-600 via-primary-700 to-accent-700 text-white overflow-hidden"
+>
 	<div class="absolute inset-0">
 		<div class="absolute top-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl"></div>
 		<div class="absolute bottom-0 left-0 w-96 h-96 bg-tertiary-500/10 rounded-full blur-3xl"></div>
@@ -414,8 +451,18 @@
 			class="group inline-flex items-center gap-2 px-10 py-5 bg-white text-primary-600 font-bold rounded-xl hover:bg-accent-50 transition-all transform hover:scale-105 shadow-2xl hover:shadow-accent-500/50"
 		>
 			Contact Us
-			<svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+			<svg
+				class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M13 7l5 5m0 0l-5 5m5-5H6"
+				/>
 			</svg>
 		</a>
 	</div>
@@ -442,7 +489,8 @@
 				>
 					<span class="flex items-center gap-2">
 						<span
-							class="w-2 h-2 rounded-full transition-all duration-200 {activeCategory === category.id
+							class="w-2 h-2 rounded-full transition-all duration-200 {activeCategory ===
+							category.id
 								? 'bg-white scale-125'
 								: 'bg-secondary-300'}"
 						></span>

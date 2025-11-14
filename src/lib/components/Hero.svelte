@@ -32,8 +32,12 @@
 					Empowering SMEs with
 					<span class="block mt-2 text-gradient">Custom Software Solutions</span>
 				</h1>
-				<p class="text-xl sm:text-2xl text-secondary-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-					Comprehensive software solutions—from custom development and AI services to cloud infrastructure and CRM/ERP systems—designed to help SMEs grow and thrive. Serving India and expanding to UAE.
+				<p
+					class="text-xl sm:text-2xl text-secondary-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+				>
+					Comprehensive software solutions—from custom development and AI services to cloud
+					infrastructure and CRM/ERP systems—designed to help SMEs grow and thrive. Serving India
+					and expanding to UAE.
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 					<a
@@ -41,7 +45,9 @@
 						class="group px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all transform hover:scale-105 relative overflow-hidden border-2 border-primary-500/20 hover:border-primary-400/40"
 					>
 						<span class="relative z-10">Get Started</span>
-						<div class="absolute inset-0 bg-gradient-to-r from-accent-600 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+						<div
+							class="absolute inset-0 bg-gradient-to-r from-accent-600 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity"
+						></div>
 					</a>
 					<a
 						href="/services"
@@ -62,8 +68,12 @@
 				class:delay-200={mounted}
 			>
 				<div class="relative z-10">
-					<div class="relative bg-gradient-to-br from-primary-50 to-accent-50 rounded-3xl p-8 lg:p-12 border-2 border-primary-200/50">
-						<div class="absolute -inset-1 bg-gradient-to-r from-primary-600/10 to-accent-600/10 rounded-3xl blur-2xl"></div>
+					<div
+						class="relative bg-gradient-to-br from-primary-50 to-accent-50 rounded-3xl p-8 lg:p-12 border-2 border-primary-200/50"
+					>
+						<div
+							class="absolute -inset-1 bg-gradient-to-r from-primary-600/10 to-accent-600/10 rounded-3xl blur-2xl"
+						></div>
 						<div class="relative">
 							<img
 								src="/illustrations/building-product.svg"

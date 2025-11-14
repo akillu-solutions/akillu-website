@@ -8,7 +8,7 @@
 	--color-primary-300: #758da5;
 	--color-primary-400: #476787;
 	--color-primary-500: #2d4a63;
-	--color-primary-600: #16364D;
+	--color-primary-600: #16364d;
 	--color-primary-700: #112b3d;
 	--color-primary-800: #0d202e;
 	--color-primary-900: #08151e;
@@ -31,7 +31,7 @@
 	--color-accent-200: #83dfdb;
 	--color-accent-300: #45cfc9;
 	--color-accent-400: #26b8b2;
-	--color-accent-500: #01A6A3;
+	--color-accent-500: #01a6a3;
 	--color-accent-600: #018582;
 	--color-accent-700: #016462;
 	--color-accent-800: #014341;
@@ -158,7 +158,8 @@
 	}
 
 	@keyframes gradient-shift {
-		0%, 100% {
+		0%,
+		100% {
 			background-position: 0% 50%;
 		}
 		50% {
@@ -167,7 +168,8 @@
 	}
 
 	@keyframes pulse-glow {
-		0%, 100% {
+		0%,
+		100% {
 			opacity: 0.5;
 			transform: scale(1);
 		}
@@ -225,7 +227,9 @@
 	}
 
 	.hover-glow:hover {
-		box-shadow: 0 0 30px rgba(22, 54, 77, 0.2), 0 0 60px rgba(1, 166, 163, 0.15);
+		box-shadow:
+			0 0 30px rgba(22, 54, 77, 0.2),
+			0 0 60px rgba(1, 166, 163, 0.15);
 	}
 
 	/* Glassmorphism */
@@ -245,7 +249,7 @@
 
 	/* Modern Gradient Backgrounds */
 	.gradient-mesh {
-		background: 
+		background:
 			radial-gradient(at 0% 0%, rgba(22, 54, 77, 0.08) 0px, transparent 50%),
 			radial-gradient(at 100% 0%, rgba(1, 166, 163, 0.08) 0px, transparent 50%),
 			radial-gradient(at 100% 100%, rgba(22, 54, 77, 0.08) 0px, transparent 50%),
@@ -281,7 +285,12 @@
 		left: 0;
 		right: 0;
 		height: 4px;
-		background: linear-gradient(90deg, var(--color-primary-600), var(--color-accent-600), var(--color-primary-600));
+		background: linear-gradient(
+			90deg,
+			var(--color-primary-600),
+			var(--color-accent-600),
+			var(--color-primary-600)
+		);
 		background-size: 200% 100%;
 		transform: scaleX(0);
 		transform-origin: left;
@@ -325,7 +334,9 @@
 		border-radius: 1rem;
 		padding: 1px;
 		background: linear-gradient(135deg, var(--color-primary-500), var(--color-accent-500));
-		-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		-webkit-mask:
+			linear-gradient(#fff 0 0) content-box,
+			linear-gradient(#fff 0 0);
 		-webkit-mask-composite: xor;
 		mask-composite: exclude;
 		opacity: 0;
@@ -350,7 +361,7 @@
 		content: '';
 		position: absolute;
 		inset: 0;
-		background-image: 
+		background-image:
 			radial-gradient(circle at 20% 50%, rgba(22, 54, 77, 0.03) 0%, transparent 50%),
 			radial-gradient(circle at 80% 80%, rgba(1, 166, 163, 0.03) 0%, transparent 50%);
 		pointer-events: none;

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import ContactForm from '$lib/components/ContactForm.svelte';
+	import SEOHead from '$lib/components/SEOHead.svelte';
+	import StructuredData from '$lib/components/StructuredData.svelte';
 
 	let openFaqIndex: number | null = null;
 	let selectedCurrency: 'USD' | 'INR' | 'AED' = 'AED';
@@ -19,12 +21,12 @@
 			INR: '₹12,45,000 - ₹29,05,000',
 			AED: 'AED 55,050 - AED 128,450'
 		},
-		'ecommerce': {
+		ecommerce: {
 			USD: '$25,000 - $60,000',
 			INR: '₹20,75,000 - ₹49,80,000',
 			AED: 'AED 91,750 - AED 220,200'
 		},
-		'crm': {
+		crm: {
 			USD: '$30,000 - $75,000',
 			INR: '₹24,90,000 - ₹62,25,000',
 			AED: 'AED 110,100 - AED 275,250'
@@ -50,12 +52,12 @@
 		{
 			question: 'What is included in the 12-month free support?',
 			answer:
-				'After we deliver your software, you receive 12 months of free support. This includes bug fixes, technical assistance, minor adjustments, and help with any issues that arise. We want to ensure your software runs smoothly and you\'re satisfied with the solution.'
+				"After we deliver your software, you receive 12 months of free support. This includes bug fixes, technical assistance, minor adjustments, and help with any issues that arise. We want to ensure your software runs smoothly and you're satisfied with the solution."
 		},
 		{
 			question: 'What are maintenance costs after the free support period?',
 			answer:
-				'After the initial 12-month free support period, we offer flexible maintenance plans on a monthly or yearly basis. Our maintenance costs are reasonably priced and can include regular updates, security patches, performance monitoring, feature enhancements, and ongoing technical support. We\'ll work with you to create a maintenance plan that fits your needs and budget.'
+				"After the initial 12-month free support period, we offer flexible maintenance plans on a monthly or yearly basis. Our maintenance costs are reasonably priced and can include regular updates, security patches, performance monitoring, feature enhancements, and ongoing technical support. We'll work with you to create a maintenance plan that fits your needs and budget."
 		},
 		{
 			question: 'How long does a typical project take?',
@@ -95,7 +97,7 @@
 		{
 			question: 'Do you offer mobile app development?',
 			answer:
-				'Yes, we develop mobile applications for iOS, Android, and cross-platform solutions. We also build Progressive Web Apps (PWAs) that work across devices. We\'ll help you choose the best approach based on your needs and budget.'
+				"Yes, we develop mobile applications for iOS, Android, and cross-platform solutions. We also build Progressive Web Apps (PWAs) that work across devices. We'll help you choose the best approach based on your needs and budget."
 		},
 		{
 			question: 'What kind of AI services do you provide?',
@@ -105,7 +107,7 @@
 		{
 			question: 'How do I get started?',
 			answer:
-				'Getting started is easy! Simply contact us through our contact form, email, or phone. We\'ll schedule a consultation to discuss your needs, answer any questions, and provide a detailed proposal with pricing and timeline. There\'s no obligation, and we\'re happy to help you understand how we can assist your business.'
+				"Getting started is easy! Simply contact us through our contact form, email, or phone. We'll schedule a consultation to discuss your needs, answer any questions, and provide a detailed proposal with pricing and timeline. There's no obligation, and we're happy to help you understand how we can assist your business."
 		},
 		{
 			question: 'Do you provide training for the software you build?',
@@ -115,13 +117,16 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Pricing & FAQ - Akillu Solutions</title>
-	<meta
-		name="description"
-		content="Transparent pricing information and frequently asked questions about our software development services, support, and maintenance plans."
-	/>
-</svelte:head>
+<SEOHead
+	seoData={{
+		title: 'Pricing & FAQ - Akillu Solutions',
+		description:
+			'Transparent pricing information and frequently asked questions about our software development services, support, and maintenance plans.',
+		keywords: 'pricing, software development pricing, FAQ, software development costs'
+	}}
+/>
+
+<StructuredData type="Organization" />
 
 <!-- Hero Section -->
 <section class="bg-gradient-to-br from-primary-600 to-primary-700 text-white py-20">
@@ -140,16 +145,20 @@
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="max-w-4xl mx-auto">
 			<div class="text-center mb-16">
-				<h2 class="text-4xl font-display font-bold text-secondary-900 mb-6">Our Pricing Approach</h2>
+				<h2 class="text-4xl font-display font-bold text-secondary-900 mb-6">
+					Our Pricing Approach
+				</h2>
 				<p class="text-xl text-secondary-600 max-w-3xl mx-auto">
-					Every project is unique, and so is our pricing. We believe in fair, transparent pricing that
-					reflects the value we deliver.
+					Every project is unique, and so is our pricing. We believe in fair, transparent pricing
+					that reflects the value we deliver.
 				</p>
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
 				<!-- Custom Pricing Card -->
-				<div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 border-2 border-primary-200">
+				<div
+					class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 border-2 border-primary-200"
+				>
 					<div
 						class="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl flex items-center justify-center mb-6"
 					>
@@ -167,8 +176,8 @@
 					</h3>
 					<p class="text-secondary-700 mb-6 leading-relaxed">
 						Our pricing is tailored to each project based on your specific requirements, scope,
-						complexity, and timeline. We work closely with you to understand your needs and provide a
-						detailed quote that reflects the value we'll deliver.
+						complexity, and timeline. We work closely with you to understand your needs and provide
+						a detailed quote that reflects the value we'll deliver.
 					</p>
 					<ul class="space-y-3 mb-6">
 						<li class="flex items-start space-x-3">
@@ -262,7 +271,11 @@
 			<!-- Important Note -->
 			<div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg p-6 mb-12">
 				<div class="flex items-start">
-					<svg class="w-6 h-6 text-yellow-600 flex-shrink-0 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+					<svg
+						class="w-6 h-6 text-yellow-600 flex-shrink-0 mt-0.5 mr-3"
+						fill="currentColor"
+						viewBox="0 0 20 20"
+					>
 						<path
 							fill-rule="evenodd"
 							d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
@@ -272,10 +285,11 @@
 					<div>
 						<h4 class="font-semibold text-yellow-900 mb-2">Important Note About Previous Prices</h4>
 						<p class="text-yellow-800">
-							If you've seen prices from previous projects we've developed, please note that these are
-							for reference only and may not accurately reflect pricing for your specific needs. Each
-							project is unique, and pricing depends on current requirements, technology choices, and
-							market conditions. We provide fresh, customized quotes for every new project.
+							If you've seen prices from previous projects we've developed, please note that these
+							are for reference only and may not accurately reflect pricing for your specific needs.
+							Each project is unique, and pricing depends on current requirements, technology
+							choices, and market conditions. We provide fresh, customized quotes for every new
+							project.
 						</p>
 					</div>
 				</div>
@@ -289,13 +303,17 @@
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="max-w-6xl mx-auto">
 			<div class="text-center mb-16">
-				<h2 class="text-4xl font-display font-bold text-secondary-900 mb-6">Sample Project Prices</h2>
+				<h2 class="text-4xl font-display font-bold text-secondary-900 mb-6">
+					Sample Project Prices
+				</h2>
 				<p class="text-xl text-secondary-600 max-w-3xl mx-auto mb-6">
-					Here are examples of previous projects with pricing ranges and the key factors that influenced
-					each price. These are for reference only—your project may differ significantly.
+					Here are examples of previous projects with pricing ranges and the key factors that
+					influenced each price. These are for reference only—your project may differ significantly.
 				</p>
 				<div class="flex items-center justify-center gap-3 mb-4">
-					<label for="currency-select" class="text-sm font-medium text-secondary-700">Select Currency:</label>
+					<label for="currency-select" class="text-sm font-medium text-secondary-700"
+						>Select Currency:</label
+					>
 					<select
 						id="currency-select"
 						bind:value={selectedCurrency}
@@ -321,7 +339,12 @@
 									<div
 										class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center flex-shrink-0"
 									>
-										<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<svg
+											class="w-6 h-6 text-white"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+										>
 											<path
 												stroke-linecap="round"
 												stroke-linejoin="round"
@@ -338,32 +361,57 @@
 									Modern, responsive website with contact forms and basic CMS functionality
 								</p>
 							</div>
-							<div class="flex flex-col items-stretch sm:items-end lg:flex-shrink-0 lg:min-w-[200px]">
+							<div
+								class="flex flex-col items-stretch sm:items-end lg:flex-shrink-0 lg:min-w-[200px]"
+							>
 								<div class="mb-4 w-full sm:w-auto">
 									{#if selectedCurrency === 'USD'}
-										<div class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium opacity-90 mb-1">USD</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">{priceData['small-website'].USD}</div>
+											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
+												{priceData['small-website'].USD}
+											</div>
 										</div>
 									{:else if selectedCurrency === 'INR'}
-										<div class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium text-secondary-600 mb-1">INR</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight">{priceData['small-website'].INR}</div>
+											<div
+												class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight"
+											>
+												{priceData['small-website'].INR}
+											</div>
 										</div>
 									{:else}
-										<div class="bg-accent-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-accent-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium text-accent-700 mb-1">AED</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight">{priceData['small-website'].AED}</div>
+											<div
+												class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight"
+											>
+												{priceData['small-website'].AED}
+											</div>
 										</div>
 									{/if}
 								</div>
-								<div class="text-sm text-secondary-500 font-medium text-center sm:text-right">Timeline: 4-6 weeks</div>
+								<div class="text-sm text-secondary-500 font-medium text-center sm:text-right">
+									Timeline: 4-6 weeks
+								</div>
 							</div>
 						</div>
 
 						<div class="bg-primary-50 rounded-lg p-6">
 							<h4 class="font-semibold text-secondary-900 mb-4 flex items-center">
-								<svg class="w-5 h-5 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg
+									class="w-5 h-5 text-primary-600 mr-2"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
 									<path
 										stroke-linecap="round"
 										stroke-linejoin="round"
@@ -377,15 +425,14 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
 									<span
-										><strong>Scope:</strong> 5-8 pages, responsive design, contact form, basic SEO
-										optimization</span
+										><strong>Scope:</strong> 5-8 pages, responsive design, contact form, basic SEO optimization</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
 									<span
-										><strong>Technology:</strong> Modern static site generator or CMS (SvelteKit,
-										WordPress, etc.)</span
+										><strong>Technology:</strong> Modern static site generator or CMS (SvelteKit, WordPress,
+										etc.)</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
@@ -394,7 +441,9 @@
 								</li>
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
-									<span><strong>Integrations:</strong> Minimal—contact form and basic analytics</span>
+									<span
+										><strong>Integrations:</strong> Minimal—contact form and basic analytics</span
+									>
 								</li>
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
@@ -414,7 +463,12 @@
 									<div
 										class="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-lg flex items-center justify-center flex-shrink-0"
 									>
-										<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<svg
+											class="w-6 h-6 text-white"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+										>
 											<path
 												stroke-linecap="round"
 												stroke-linejoin="round"
@@ -428,35 +482,61 @@
 									</h3>
 								</div>
 								<p class="text-secondary-600 mb-4">
-									Business management portal with user authentication, dashboards, and data management
+									Business management portal with user authentication, dashboards, and data
+									management
 								</p>
 							</div>
-							<div class="flex flex-col items-stretch sm:items-end lg:flex-shrink-0 lg:min-w-[200px]">
+							<div
+								class="flex flex-col items-stretch sm:items-end lg:flex-shrink-0 lg:min-w-[200px]"
+							>
 								<div class="mb-4 w-full sm:w-auto">
 									{#if selectedCurrency === 'USD'}
-										<div class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium opacity-90 mb-1">USD</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">{priceData['web-app'].USD}</div>
+											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
+												{priceData['web-app'].USD}
+											</div>
 										</div>
 									{:else if selectedCurrency === 'INR'}
-										<div class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium text-secondary-600 mb-1">INR</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight">{priceData['web-app'].INR}</div>
+											<div
+												class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight"
+											>
+												{priceData['web-app'].INR}
+											</div>
 										</div>
 									{:else}
-										<div class="bg-accent-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-accent-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium text-accent-700 mb-1">AED</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight">{priceData['web-app'].AED}</div>
+											<div
+												class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight"
+											>
+												{priceData['web-app'].AED}
+											</div>
 										</div>
 									{/if}
 								</div>
-								<div class="text-sm text-secondary-500 font-medium text-center sm:text-right">Timeline: 8-14 weeks</div>
+								<div class="text-sm text-secondary-500 font-medium text-center sm:text-right">
+									Timeline: 8-14 weeks
+								</div>
 							</div>
 						</div>
 
 						<div class="bg-accent-50 rounded-lg p-6">
 							<h4 class="font-semibold text-secondary-900 mb-4 flex items-center">
-								<svg class="w-5 h-5 text-accent-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg
+									class="w-5 h-5 text-accent-600 mr-2"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
 									<path
 										stroke-linecap="round"
 										stroke-linejoin="round"
@@ -470,8 +550,8 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-accent-600 font-bold mt-1">•</span>
 									<span
-										><strong>Scope:</strong> User authentication, role-based access, dashboard with
-										analytics, CRUD operations, reporting features</span
+										><strong>Scope:</strong> User authentication, role-based access, dashboard with analytics,
+										CRUD operations, reporting features</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
@@ -491,17 +571,20 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-accent-600 font-bold mt-1">•</span>
 									<span
-										><strong>Complexity:</strong> Medium—custom business logic, data relationships,
-										workflow automation</span
+										><strong>Complexity:</strong> Medium—custom business logic, data relationships, workflow
+										automation</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
 									<span class="text-accent-600 font-bold mt-1">•</span>
-									<span><strong>Security:</strong> Authentication, authorization, data encryption</span>
+									<span
+										><strong>Security:</strong> Authentication, authorization, data encryption</span
+									>
 								</li>
 								<li class="flex items-start space-x-2">
 									<span class="text-accent-600 font-bold mt-1">•</span>
-									<span><strong>Testing:</strong> Comprehensive QA and user acceptance testing</span>
+									<span><strong>Testing:</strong> Comprehensive QA and user acceptance testing</span
+									>
 								</li>
 							</ul>
 						</div>
@@ -517,7 +600,12 @@
 									<div
 										class="w-12 h-12 bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg flex items-center justify-center flex-shrink-0"
 									>
-										<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<svg
+											class="w-6 h-6 text-white"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+										>
 											<path
 												stroke-linecap="round"
 												stroke-linejoin="round"
@@ -531,36 +619,61 @@
 									</h3>
 								</div>
 								<p class="text-secondary-600 mb-4">
-									Full-featured online store with inventory management, payment processing, and admin
-									dashboard
+									Full-featured online store with inventory management, payment processing, and
+									admin dashboard
 								</p>
 							</div>
-							<div class="flex flex-col items-stretch sm:items-end lg:flex-shrink-0 lg:min-w-[200px]">
+							<div
+								class="flex flex-col items-stretch sm:items-end lg:flex-shrink-0 lg:min-w-[200px]"
+							>
 								<div class="mb-4 w-full sm:w-auto">
 									{#if selectedCurrency === 'USD'}
-										<div class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium opacity-90 mb-1">USD</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">{priceData['ecommerce'].USD}</div>
+											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
+												{priceData['ecommerce'].USD}
+											</div>
 										</div>
 									{:else if selectedCurrency === 'INR'}
-										<div class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium text-secondary-600 mb-1">INR</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight">{priceData['ecommerce'].INR}</div>
+											<div
+												class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight"
+											>
+												{priceData['ecommerce'].INR}
+											</div>
 										</div>
 									{:else}
-										<div class="bg-accent-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-accent-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium text-accent-700 mb-1">AED</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight">{priceData['ecommerce'].AED}</div>
+											<div
+												class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight"
+											>
+												{priceData['ecommerce'].AED}
+											</div>
 										</div>
 									{/if}
 								</div>
-								<div class="text-sm text-secondary-500 font-medium text-center sm:text-right">Timeline: 12-20 weeks</div>
+								<div class="text-sm text-secondary-500 font-medium text-center sm:text-right">
+									Timeline: 12-20 weeks
+								</div>
 							</div>
 						</div>
 
 						<div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-lg p-6">
 							<h4 class="font-semibold text-secondary-900 mb-4 flex items-center">
-								<svg class="w-5 h-5 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg
+									class="w-5 h-5 text-primary-600 mr-2"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
 									<path
 										stroke-linecap="round"
 										stroke-linejoin="round"
@@ -627,7 +740,12 @@
 									<div
 										class="w-12 h-12 bg-gradient-to-br from-accent-500 to-primary-600 rounded-lg flex items-center justify-center flex-shrink-0"
 									>
-										<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<svg
+											class="w-6 h-6 text-white"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+										>
 											<path
 												stroke-linecap="round"
 												stroke-linejoin="round"
@@ -636,38 +754,65 @@
 											/>
 										</svg>
 									</div>
-									<h3 class="text-xl sm:text-2xl font-display font-bold text-secondary-900">Custom CRM System</h3>
+									<h3 class="text-xl sm:text-2xl font-display font-bold text-secondary-900">
+										Custom CRM System
+									</h3>
 								</div>
 								<p class="text-secondary-600 mb-4">
 									Sales pipeline management, lead tracking, customer communication, and reporting
 								</p>
 							</div>
-							<div class="flex flex-col items-stretch sm:items-end lg:flex-shrink-0 lg:min-w-[200px]">
+							<div
+								class="flex flex-col items-stretch sm:items-end lg:flex-shrink-0 lg:min-w-[200px]"
+							>
 								<div class="mb-4 w-full sm:w-auto">
 									{#if selectedCurrency === 'USD'}
-										<div class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium opacity-90 mb-1">USD</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">{priceData['crm'].USD}</div>
+											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
+												{priceData['crm'].USD}
+											</div>
 										</div>
 									{:else if selectedCurrency === 'INR'}
-										<div class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium text-secondary-600 mb-1">INR</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight">{priceData['crm'].INR}</div>
+											<div
+												class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight"
+											>
+												{priceData['crm'].INR}
+											</div>
 										</div>
 									{:else}
-										<div class="bg-accent-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-accent-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium text-accent-700 mb-1">AED</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight">{priceData['crm'].AED}</div>
+											<div
+												class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight"
+											>
+												{priceData['crm'].AED}
+											</div>
 										</div>
 									{/if}
 								</div>
-								<div class="text-sm text-secondary-500 font-medium text-center sm:text-right">Timeline: 14-24 weeks</div>
+								<div class="text-sm text-secondary-500 font-medium text-center sm:text-right">
+									Timeline: 14-24 weeks
+								</div>
 							</div>
 						</div>
 
 						<div class="bg-accent-50 rounded-lg p-6">
 							<h4 class="font-semibold text-secondary-900 mb-4 flex items-center">
-								<svg class="w-5 h-5 text-accent-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg
+									class="w-5 h-5 text-accent-600 mr-2"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
 									<path
 										stroke-linecap="round"
 										stroke-linejoin="round"
@@ -702,8 +847,8 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-accent-600 font-bold mt-1">•</span>
 									<span
-										><strong>Reporting:</strong> Custom dashboards, sales forecasting, performance
-										metrics, data visualization</span
+										><strong>Reporting:</strong> Custom dashboards, sales forecasting, performance metrics,
+										data visualization</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
@@ -716,8 +861,7 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-accent-600 font-bold mt-1">•</span>
 									<span
-										><strong>Data Migration:</strong> Importing existing customer data, historical
-										records</span
+										><strong>Data Migration:</strong> Importing existing customer data, historical records</span
 									>
 								</li>
 							</ul>
@@ -734,7 +878,12 @@
 									<div
 										class="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center flex-shrink-0"
 									>
-										<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<svg
+											class="w-6 h-6 text-white"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+										>
 											<path
 												stroke-linecap="round"
 												stroke-linejoin="round"
@@ -751,32 +900,57 @@
 									Native or cross-platform mobile app with backend API and user authentication
 								</p>
 							</div>
-							<div class="flex flex-col items-stretch sm:items-end lg:flex-shrink-0 lg:min-w-[200px]">
+							<div
+								class="flex flex-col items-stretch sm:items-end lg:flex-shrink-0 lg:min-w-[200px]"
+							>
 								<div class="mb-4 w-full sm:w-auto">
 									{#if selectedCurrency === 'USD'}
-										<div class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium opacity-90 mb-1">USD</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">{priceData['mobile-app'].USD}</div>
+											<div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
+												{priceData['mobile-app'].USD}
+											</div>
 										</div>
 									{:else if selectedCurrency === 'INR'}
-										<div class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-secondary-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium text-secondary-600 mb-1">INR</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight">{priceData['mobile-app'].INR}</div>
+											<div
+												class="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-900 leading-tight"
+											>
+												{priceData['mobile-app'].INR}
+											</div>
 										</div>
 									{:else}
-										<div class="bg-accent-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words">
+										<div
+											class="bg-accent-100 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-center sm:text-right break-words"
+										>
 											<div class="text-xs font-medium text-accent-700 mb-1">AED</div>
-											<div class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight">{priceData['mobile-app'].AED}</div>
+											<div
+												class="text-xl sm:text-2xl lg:text-3xl font-bold text-accent-900 leading-tight"
+											>
+												{priceData['mobile-app'].AED}
+											</div>
 										</div>
 									{/if}
 								</div>
-								<div class="text-sm text-secondary-500 font-medium text-center sm:text-right">Timeline: 10-18 weeks</div>
+								<div class="text-sm text-secondary-500 font-medium text-center sm:text-right">
+									Timeline: 10-18 weeks
+								</div>
 							</div>
 						</div>
 
 						<div class="bg-primary-50 rounded-lg p-6">
 							<h4 class="font-semibold text-secondary-900 mb-4 flex items-center">
-								<svg class="w-5 h-5 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg
+									class="w-5 h-5 text-primary-600 mr-2"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
 									<path
 										stroke-linecap="round"
 										stroke-linejoin="round"
@@ -818,8 +992,7 @@
 								<li class="flex items-start space-x-2">
 									<span class="text-primary-600 font-bold mt-1">•</span>
 									<span
-										><strong>App Store:</strong> Submission process, compliance, testing, approval
-										coordination</span
+										><strong>App Store:</strong> Submission process, compliance, testing, approval coordination</span
 									>
 								</li>
 								<li class="flex items-start space-x-2">
@@ -838,7 +1011,11 @@
 			<!-- Disclaimer -->
 			<div class="mt-12 bg-blue-50 border-l-4 border-blue-400 rounded-lg p-6">
 				<div class="flex items-start">
-					<svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+					<svg
+						class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5 mr-3"
+						fill="currentColor"
+						viewBox="0 0 20 20"
+					>
 						<path
 							fill-rule="evenodd"
 							d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
@@ -848,11 +1025,11 @@
 					<div>
 						<h4 class="font-semibold text-blue-900 mb-2">Please Note</h4>
 						<p class="text-blue-800">
-							These prices are examples from previous projects and are provided for reference only. Actual
-							pricing for your project will depend on your specific requirements, current market rates,
-							technology choices, timeline, and other factors. We provide detailed, customized quotes
-							after understanding your unique needs. Contact us for an accurate estimate tailored to your
-							project.
+							These prices are examples from previous projects and are provided for reference only.
+							Actual pricing for your project will depend on your specific requirements, current
+							market rates, technology choices, timeline, and other factors. We provide detailed,
+							customized quotes after understanding your unique needs. Contact us for an accurate
+							estimate tailored to your project.
 						</p>
 					</div>
 				</div>
@@ -939,8 +1116,8 @@
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 		<h2 class="text-4xl font-display font-bold mb-6">Still Have Questions?</h2>
 		<p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-			We're here to help! Reach out to us directly and we'll be happy to answer any questions you may
-			have.
+			We're here to help! Reach out to us directly and we'll be happy to answer any questions you
+			may have.
 		</p>
 		<div class="flex flex-col sm:flex-row gap-4 justify-center">
 			<a
@@ -958,4 +1135,3 @@
 		</div>
 	</div>
 </section>
-

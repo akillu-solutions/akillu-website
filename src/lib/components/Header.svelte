@@ -37,7 +37,7 @@
 				<!-- Logo -->
 				<a href="/" class="flex items-center space-x-3 group">
 					<span class="flex items-baseline gap-1.5">
-						<span 
+						<span
 							class="text-2xl sm:text-3xl font-bold text-primary-700 group-hover:text-primary-600 transition-colors tracking-wide"
 							style="font-family: var(--font-outfit);"
 						>

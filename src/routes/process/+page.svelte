@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { icons } from '$lib/utils/icons';
+	import SEOHead from '$lib/components/SEOHead.svelte';
+	import StructuredData from '$lib/components/StructuredData.svelte';
 
 	let mounted = false;
 	onMount(() => {
@@ -53,23 +55,35 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Our Process - Akillu Solutions</title>
-	<meta
-		name="description"
-		content="Learn about our 6-step process for delivering custom software solutions: from understanding requirements to ongoing support."
-	/>
-</svelte:head>
+<SEOHead
+	seoData={{
+		title: 'Our Process - Akillu Solutions',
+		description:
+			'Learn about our 6-step process for delivering custom software solutions: from understanding requirements to ongoing support.',
+		keywords: 'software development process, custom software workflow, development methodology'
+	}}
+/>
+
+<StructuredData type="Organization" />
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 overflow-hidden">
+<section
+	class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 overflow-hidden"
+>
 	<div class="absolute inset-0">
-		<div class="absolute top-0 left-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl animate-pulse-glow"></div>
-		<div class="absolute bottom-0 right-0 w-96 h-96 bg-tertiary-500/10 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 2s;"></div>
+		<div
+			class="absolute top-0 left-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl animate-pulse-glow"
+		></div>
+		<div
+			class="absolute bottom-0 right-0 w-96 h-96 bg-tertiary-500/10 rounded-full blur-3xl animate-pulse-glow"
+			style="animation-delay: 2s;"
+		></div>
 	</div>
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 		<div class="max-w-3xl mx-auto text-center">
-			<h1 class="text-5xl sm:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-white via-accent-100 to-white bg-clip-text text-transparent">
+			<h1
+				class="text-5xl sm:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-white via-accent-100 to-white bg-clip-text text-transparent"
+			>
 				Our Process
 			</h1>
 			<p class="text-xl text-primary-100 leading-relaxed">
@@ -122,11 +136,12 @@
 											class="relative w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-primary-500/40 group-hover:scale-110 transition-all duration-300 z-10 p-3 lg:p-4"
 										>
 											<!-- Inner White Circle for Contrast -->
-											<div
-												class="absolute inset-1 rounded-xl bg-white/10 backdrop-blur-sm"
-											></div>
+											<div class="absolute inset-1 rounded-xl bg-white/10 backdrop-blur-sm"></div>
 											<!-- Icon -->
-											<div class="relative text-white z-10 flex items-center justify-center" style="width: 28px; height: 28px;">
+											<div
+												class="relative text-white z-10 flex items-center justify-center"
+												style="width: 28px; height: 28px;"
+											>
 												<div class="w-full h-full flex items-center justify-center">
 													{@html step.icon}
 												</div>
@@ -144,11 +159,17 @@
 
 								<!-- Content -->
 								<div class="flex-grow pt-2">
-									<div class="bg-white rounded-2xl p-6 lg:p-8 border-2 border-secondary-200 hover:border-primary-400/50 shadow-md hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-300 hover:-translate-y-1.5">
-										<h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-secondary-900 mb-4 group-hover:text-primary-700 transition-colors duration-300">
+									<div
+										class="bg-white rounded-2xl p-6 lg:p-8 border-2 border-secondary-200 hover:border-primary-400/50 shadow-md hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-300 hover:-translate-y-1.5"
+									>
+										<h2
+											class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-secondary-900 mb-4 group-hover:text-primary-700 transition-colors duration-300"
+										>
 											{step.title}
 										</h2>
-										<p class="text-base lg:text-lg text-secondary-600 leading-relaxed">{step.description}</p>
+										<p class="text-base lg:text-lg text-secondary-600 leading-relaxed">
+											{step.description}
+										</p>
 									</div>
 								</div>
 							</div>
@@ -167,14 +188,20 @@
 		<div class="max-w-5xl mx-auto">
 			<div class="text-center mb-16">
 				<h2 class="text-4xl sm:text-5xl font-display font-bold text-secondary-900 mb-4">
-					<span class="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-700 bg-clip-text text-transparent">
+					<span
+						class="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-700 bg-clip-text text-transparent"
+					>
 						Our Core Principles
 					</span>
 				</h2>
-				<div class="w-24 h-1 bg-gradient-to-r from-primary-600 to-accent-600 mx-auto rounded-full"></div>
+				<div
+					class="w-24 h-1 bg-gradient-to-r from-primary-600 to-accent-600 mx-auto rounded-full"
+				></div>
 			</div>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-				<div class="bg-white rounded-2xl p-6 lg:p-8 border-2 border-secondary-200 hover:border-primary-400/50 shadow-md hover:shadow-2xl hover:shadow-primary-500/10 text-center transition-all duration-300 hover:-translate-y-1.5 group">
+				<div
+					class="bg-white rounded-2xl p-6 lg:p-8 border-2 border-secondary-200 hover:border-primary-400/50 shadow-md hover:shadow-2xl hover:shadow-primary-500/10 text-center transition-all duration-300 hover:-translate-y-1.5 group"
+				>
 					<div
 						class="w-20 h-20 bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-2xl group-hover:shadow-primary-500/30 group-hover:scale-110 transition-all duration-300"
 					>
@@ -182,12 +209,18 @@
 							{@html icons.users}
 						</div>
 					</div>
-					<h3 class="text-2xl font-bold text-secondary-900 mb-4 group-hover:text-primary-700 transition-colors duration-300">User-Centric</h3>
+					<h3
+						class="text-2xl font-bold text-secondary-900 mb-4 group-hover:text-primary-700 transition-colors duration-300"
+					>
+						User-Centric
+					</h3>
 					<p class="text-secondary-600 leading-relaxed">
 						We work directly with end-users to understand real problems, not assumptions.
 					</p>
 				</div>
-				<div class="bg-white rounded-2xl p-6 lg:p-8 border-2 border-secondary-200 hover:border-accent-400/50 shadow-md hover:shadow-2xl hover:shadow-accent-500/10 text-center transition-all duration-300 hover:-translate-y-1.5 group">
+				<div
+					class="bg-white rounded-2xl p-6 lg:p-8 border-2 border-secondary-200 hover:border-accent-400/50 shadow-md hover:shadow-2xl hover:shadow-accent-500/10 text-center transition-all duration-300 hover:-translate-y-1.5 group"
+				>
 					<div
 						class="w-20 h-20 bg-gradient-to-br from-accent-500 via-accent-600 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-2xl group-hover:shadow-accent-500/30 group-hover:scale-110 transition-all duration-300"
 					>
@@ -195,12 +228,18 @@
 							{@html icons.refresh}
 						</div>
 					</div>
-					<h3 class="text-2xl font-bold text-secondary-900 mb-4 group-hover:text-accent-700 transition-colors duration-300">Transparent</h3>
+					<h3
+						class="text-2xl font-bold text-secondary-900 mb-4 group-hover:text-accent-700 transition-colors duration-300"
+					>
+						Transparent
+					</h3>
 					<p class="text-secondary-600 leading-relaxed">
 						You are kept in the loop at every stage with regular updates and feedback sessions.
 					</p>
 				</div>
-				<div class="bg-white rounded-2xl p-6 lg:p-8 border-2 border-secondary-200 hover:border-primary-400/50 shadow-md hover:shadow-2xl hover:shadow-primary-500/10 text-center transition-all duration-300 hover:-translate-y-1.5 group">
+				<div
+					class="bg-white rounded-2xl p-6 lg:p-8 border-2 border-secondary-200 hover:border-primary-400/50 shadow-md hover:shadow-2xl hover:shadow-primary-500/10 text-center transition-all duration-300 hover:-translate-y-1.5 group"
+				>
 					<div
 						class="w-20 h-20 bg-gradient-to-br from-primary-500 via-accent-500 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-2xl group-hover:shadow-primary-500/30 group-hover:scale-110 transition-all duration-300"
 					>
@@ -208,7 +247,11 @@
 							{@html icons.target}
 						</div>
 					</div>
-					<h3 class="text-2xl font-bold text-secondary-900 mb-4 group-hover:text-primary-700 transition-colors duration-300">Focused</h3>
+					<h3
+						class="text-2xl font-bold text-secondary-900 mb-4 group-hover:text-primary-700 transition-colors duration-300"
+					>
+						Focused
+					</h3>
 					<p class="text-secondary-600 leading-relaxed">
 						We stay focused on the initial scope, with clear boundaries for improvements vs. new
 						features.
@@ -220,13 +263,22 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 relative bg-gradient-to-br from-primary-600 via-primary-700 to-accent-700 text-white overflow-hidden">
+<section
+	class="py-20 relative bg-gradient-to-br from-primary-600 via-primary-700 to-accent-700 text-white overflow-hidden"
+>
 	<div class="absolute inset-0">
-		<div class="absolute top-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
-		<div class="absolute bottom-0 left-0 w-96 h-96 bg-tertiary-500/10 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 2s;"></div>
+		<div
+			class="absolute top-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl animate-pulse-glow"
+		></div>
+		<div
+			class="absolute bottom-0 left-0 w-96 h-96 bg-tertiary-500/10 rounded-full blur-3xl animate-pulse-glow"
+			style="animation-delay: 2s;"
+		></div>
 	</div>
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-		<h2 class="text-4xl sm:text-5xl font-display font-bold mb-6 bg-gradient-to-r from-white via-accent-100 to-white bg-clip-text text-transparent">
+		<h2
+			class="text-4xl sm:text-5xl font-display font-bold mb-6 bg-gradient-to-r from-white via-accent-100 to-white bg-clip-text text-transparent"
+		>
 			Ready to Start Your Project?
 		</h2>
 		<p class="text-xl text-primary-100 mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -238,8 +290,18 @@
 			class="group inline-flex items-center gap-2 px-10 py-5 bg-white text-primary-600 font-bold rounded-xl hover:bg-accent-50 transition-all transform hover:scale-105 shadow-2xl hover:shadow-accent-500/50 duration-300"
 		>
 			Get Started
-			<svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+			<svg
+				class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M13 7l5 5m0 0l-5 5m5-5H6"
+				/>
 			</svg>
 		</a>
 	</div>

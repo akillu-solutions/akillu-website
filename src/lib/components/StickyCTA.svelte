@@ -7,7 +7,9 @@
 	onMount(() => {
 		const handleScroll = () => {
 			scrolled = window.scrollY > 300;
-			showCTA = window.scrollY > 300 && window.scrollY < document.documentElement.scrollHeight - window.innerHeight - 100;
+			showCTA =
+				window.scrollY > 300 &&
+				window.scrollY < document.documentElement.scrollHeight - window.innerHeight - 100;
 		};
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
@@ -44,4 +46,3 @@
 		</div>
 	</div>
 {/if}
-
