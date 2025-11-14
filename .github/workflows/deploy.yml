@@ -31,8 +31,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Build
+      - name: Build for production
         env:
+          NODE_ENV: production
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: npm run build
       
