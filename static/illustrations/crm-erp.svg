@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="crmGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="crmGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8fafc" rx="8"/>
+  
+  <!-- Dashboard frame -->
+  <rect x="60" y="40" width="280" height="220" rx="4" fill="url(#crmGrad2)"/>
+  <rect x="70" y="50" width="260" height="200" rx="2" fill="#ffffff"/>
+  
+  <!-- Header -->
+  <rect x="80" y="60" width="240" height="25" rx="2" fill="url(#crmGrad1)" opacity="0.2"/>
+  
+  <!-- Sidebar -->
+  <rect x="80" y="95" width="60" height="145" rx="2" fill="#f1f5f9"/>
+  <rect x="90" y="105" width="40" height="8" rx="2" fill="#cbd5e1"/>
+  <rect x="90" y="120" width="40" height="8" rx="2" fill="#cbd5e1"/>
+  <rect x="90" y="135" width="40" height="8" rx="2" fill="url(#crmGrad1)" opacity="0.3"/>
+  <rect x="90" y="150" width="40" height="8" rx="2" fill="#cbd5e1"/>
+  
+  <!-- Main content area -->
+  <rect x="150" y="95" width="170" height="145" rx="2" fill="#ffffff"/>
+  
+  <!-- Chart/Graph -->
+  <rect x="160" y="105" width="150" height="60" rx="2" fill="#f8fafc"/>
+  <polyline points="170,150 190,140 210,145 230,130 250,135 270,125 290,140 300,135" 
+            stroke="url(#crmGrad1)" stroke-width="3" fill="none"/>
+  <circle cx="170" cy="150" r="4" fill="#ef4444"/>
+  <circle cx="250" cy="135" r="4" fill="#f97316"/>
+  <circle cx="300" cy="135" r="4" fill="#ef4444"/>
+  
+  <!-- Data table -->
+  <rect x="160" y="175" width="150" height="60" rx="2" fill="#f8fafc"/>
+  <line x1="160" y1="185" x2="310" y2="185" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="160" y1="200" x2="310" y2="200" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="160" y1="215" x2="310" y2="215" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="200" y1="175" x2="200" y2="235" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="250" y1="175" x2="250" y2="235" stroke="#e2e8f0" stroke-width="1"/>
+  
+  <!-- Stats cards -->
+  <rect x="330" y="95" width="50" height="30" rx="2" fill="url(#crmGrad1)" opacity="0.1"/>
+  <rect x="330" y="135" width="50" height="30" rx="2" fill="url(#crmGrad1)" opacity="0.1"/>
+  <rect x="330" y="175" width="50" height="30" rx="2" fill="url(#crmGrad1)" opacity="0.1"/>
+  <rect x="330" y="215" width="50" height="25" rx="2" fill="url(#crmGrad1)" opacity="0.1"/>
+  
+  <!-- Connection nodes -->
+  <circle cx="50" cy="80" r="8" fill="#ef4444" opacity="0.3"/>
+  <circle cx="350" cy="80" r="8" fill="#f97316" opacity="0.3"/>
+  <circle cx="50" cy="220" r="8" fill="#f97316" opacity="0.3"/>
+  <circle cx="350" cy="220" r="8" fill="#ef4444" opacity="0.3"/>
+</svg>

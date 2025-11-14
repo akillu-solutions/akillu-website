@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="supportGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8fafc" rx="8"/>
+  
+  <!-- Support/tool icon -->
+  <g transform="translate(200, 150)">
+    <!-- Wrench/tool -->
+    <path d="M -30 -20 L -20 -30 L -10 -20 L 0 -10 L 10 -20 L 20 -10 L 10 0 L 0 10 L -10 0 L -20 -10 Z" 
+          fill="url(#supportGrad1)" opacity="0.3"/>
+    <path d="M -25 -15 L -15 -25 L -5 -15 L 5 -5 L 15 -15 L 25 -5 L 15 5 L 5 15 L -5 5 L -15 -5 Z" 
+          fill="url(#supportGrad1)"/>
+    <circle cx="0" cy="0" r="8" fill="#ffffff"/>
+    <rect x="-2" y="-12" width="4" height="8" fill="#ffffff"/>
+    <rect x="-2" y="4" width="4" height="8" fill="#ffffff"/>
+  </g>
+  
+  <!-- Gear for maintenance -->
+  <g transform="translate(120, 120)">
+    <circle cx="0" cy="0" r="35" fill="url(#supportGrad1)" opacity="0.2"/>
+    <circle cx="0" cy="0" r="28" fill="url(#supportGrad1)"/>
+    <circle cx="0" cy="0" r="10" fill="#ffffff"/>
+    <rect x="-2" y="-18" width="4" height="10" fill="#ffffff"/>
+    <rect x="-2" y="8" width="4" height="10" fill="#ffffff"/>
+    <rect x="-18" y="-2" width="10" height="4" fill="#ffffff"/>
+    <rect x="8" y="-2" width="10" height="4" fill="#ffffff"/>
+  </g>
+  
+  <!-- Shield (protection/support) -->
+  <path d="M 280 100 L 300 110 L 300 140 L 280 150 L 260 140 L 260 110 Z" 
+        fill="url(#supportGrad1)" opacity="0.3"/>
+  <path d="M 285 105 L 295 110 L 295 135 L 285 140 L 265 135 L 265 110 Z" 
+        fill="url(#supportGrad1)"/>
+  <path d="M 280 115 L 285 120 L 280 125 L 275 120 Z" fill="#ffffff"/>
+  
+  <!-- Heart (care/support) -->
+  <path d="M 200 200 C 200 190, 190 180, 180 180 C 170 180, 160 190, 160 200 C 160 210, 180 230, 200 250 C 220 230, 240 210, 240 200 C 240 190, 230 180, 220 180 C 210 180, 200 190, 200 200 Z" 
+        fill="#ef4444" opacity="0.2"/>
+  
+  <!-- Clock (24/7 support) -->
+  <circle cx="300" cy="200" r="25" fill="#ffffff" stroke="url(#supportGrad1)" stroke-width="3"/>
+  <circle cx="300" cy="200" r="3" fill="url(#supportGrad1)"/>
+  <line x1="300" y1="200" x2="300" y2="185" stroke="url(#supportGrad1)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="300" y1="200" x2="310" y2="200" stroke="url(#supportGrad1)" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Connection lines -->
+  <line x1="120" y1="120" x2="200" y2="150" stroke="#1e293b" stroke-width="2" opacity="0.1"/>
+  <line x1="280" y1="125" x2="200" y2="150" stroke="#1e293b" stroke-width="2" opacity="0.1"/>
+  <line x1="200" y1="150" x2="200" y2="200" stroke="#1e293b" stroke-width="2" opacity="0.1"/>
+  <line x1="200" y1="150" x2="300" y2="200" stroke="#1e293b" stroke-width="2" opacity="0.1"/>
+  
+  <!-- Status indicators -->
+  <circle cx="80" cy="80" r="6" fill="#22c55e" opacity="0.6"/>
+  <circle cx="320" cy="80" r="6" fill="#22c55e" opacity="0.6"/>
+  <circle cx="80" cy="250" r="6" fill="#22c55e" opacity="0.6"/>
+  <circle cx="320" cy="250" r="6" fill="#22c55e" opacity="0.6"/>
+</svg>
