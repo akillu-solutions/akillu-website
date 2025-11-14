@@ -745,33 +745,35 @@
 
 <!-- CTA Section -->
 <section
-	class="py-24 relative overflow-hidden bg-gradient-to-br from-primary-700 via-primary-600 to-accent-600 text-white"
+	class="py-20 relative bg-gradient-to-br from-primary-600 via-primary-700 to-accent-700 text-white overflow-hidden"
 >
-	<!-- Background decoration removed - dashboard image already prominently shown in Hero section -->
 	<div class="absolute inset-0">
-		<div class="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-		<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-400/10 rounded-full blur-3xl"></div>
+		<div
+			class="absolute top-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl animate-pulse-glow"
+		></div>
+		<div
+			class="absolute bottom-0 left-0 w-96 h-96 bg-tertiary-500/10 rounded-full blur-3xl animate-pulse-glow"
+			style="animation-delay: 2s;"
+		></div>
 	</div>
-
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
 		<div class="max-w-4xl mx-auto">
-			<h2 class="text-5xl sm:text-6xl font-display font-extrabold mb-8 text-white leading-tight">
-				Ready to Transform Your <span
-					class="bg-gradient-to-r from-accent-300 to-white bg-clip-text text-transparent"
-					>Business?</span
-				>
+			<h2
+				class="text-4xl sm:text-5xl font-display font-bold mb-6 bg-gradient-to-r from-white via-accent-100 to-white bg-clip-text text-transparent"
+			>
+				Ready to Transform Your Business?
 			</h2>
-			<p class="text-xl text-primary-100 mb-12 max-w-2xl mx-auto leading-relaxed">
+			<p class="text-xl text-primary-100 mb-10 max-w-2xl mx-auto leading-relaxed">
 				Let's discuss how our services can help you grow and thrive in today's digital landscape.
 			</p>
-			<div class="flex flex-col sm:flex-row gap-6 justify-center">
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
 				<a
 					href="/contact"
-					class="group px-10 py-5 bg-white text-primary-600 font-bold rounded-xl hover:bg-gray-50 transition-all transform hover:scale-105 shadow-2xl hover:shadow-3xl inline-flex items-center justify-center gap-2"
+					class="group inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-primary-600 font-bold rounded-xl hover:bg-accent-50 transition-all transform hover:scale-105 shadow-2xl hover:shadow-accent-500/50 duration-300"
 				>
 					Get in Touch
 					<svg
-						class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+						class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
 						fill="none"
 						stroke="currentColor"
 						viewBox="0 0 24 24"
@@ -786,7 +788,7 @@
 				</a>
 				<a
 					href="/process"
-					class="px-10 py-5 glass border-2 border-white/30 text-white font-bold rounded-xl hover:bg-white/10 hover:border-white/50 transition-all transform hover:scale-105"
+					class="px-10 py-5 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all transform hover:scale-105 duration-300"
 				>
 					Learn Our Process
 				</a>

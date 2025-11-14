@@ -13,11 +13,26 @@
 />
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-primary-600 to-primary-700 text-white py-20">
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<section
+	class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 overflow-hidden"
+>
+	<div class="absolute inset-0">
+		<div
+			class="absolute top-0 left-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl animate-pulse-glow"
+		></div>
+		<div
+			class="absolute bottom-0 right-0 w-96 h-96 bg-tertiary-500/10 rounded-full blur-3xl animate-pulse-glow"
+			style="animation-delay: 2s;"
+		></div>
+	</div>
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 		<div class="max-w-3xl mx-auto text-center">
-			<h1 class="text-5xl font-display font-bold mb-6">Terms of Service</h1>
-			<p class="text-xl text-primary-100">
+			<h1
+				class="text-5xl sm:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-white via-accent-100 to-white bg-clip-text text-transparent"
+			>
+				Terms of Service
+			</h1>
+			<p class="text-xl text-primary-100 leading-relaxed">
 				Please read these terms carefully before using our website or services.
 			</p>
 		</div>

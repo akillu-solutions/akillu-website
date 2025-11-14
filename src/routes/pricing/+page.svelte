@@ -160,11 +160,26 @@
 <StructuredData type="Organization" />
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-primary-600 to-primary-700 text-white py-20">
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<section
+	class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 overflow-hidden"
+>
+	<div class="absolute inset-0">
+		<div
+			class="absolute top-0 left-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl animate-pulse-glow"
+		></div>
+		<div
+			class="absolute bottom-0 right-0 w-96 h-96 bg-tertiary-500/10 rounded-full blur-3xl animate-pulse-glow"
+			style="animation-delay: 2s;"
+		></div>
+	</div>
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 		<div class="max-w-3xl mx-auto text-center">
-			<h1 class="text-5xl font-display font-bold mb-6">Pricing & FAQ</h1>
-			<p class="text-xl text-primary-100">
+			<h1
+				class="text-5xl sm:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-white via-accent-100 to-white bg-clip-text text-transparent"
+			>
+				Pricing & FAQ
+			</h1>
+			<p class="text-xl text-primary-100 leading-relaxed">
 				Transparent information about our pricing approach and answers to common questions.
 			</p>
 		</div>
@@ -1173,23 +1188,51 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-br from-primary-600 to-primary-700 text-white">
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<h2 class="text-4xl font-display font-bold mb-6">Still Have Questions?</h2>
-		<p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+<section
+	class="py-20 relative bg-gradient-to-br from-primary-600 via-primary-700 to-accent-700 text-white overflow-hidden"
+>
+	<div class="absolute inset-0">
+		<div
+			class="absolute top-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl animate-pulse-glow"
+		></div>
+		<div
+			class="absolute bottom-0 left-0 w-96 h-96 bg-tertiary-500/10 rounded-full blur-3xl animate-pulse-glow"
+			style="animation-delay: 2s;"
+		></div>
+	</div>
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+		<h2
+			class="text-4xl sm:text-5xl font-display font-bold mb-6 bg-gradient-to-r from-white via-accent-100 to-white bg-clip-text text-transparent"
+		>
+			Still Have Questions?
+		</h2>
+		<p class="text-xl text-primary-100 mb-10 max-w-2xl mx-auto leading-relaxed">
 			We're here to help! Reach out to us directly and we'll be happy to answer any questions you
 			may have.
 		</p>
 		<div class="flex flex-col sm:flex-row gap-4 justify-center">
 			<a
 				href="/contact"
-				class="inline-block px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-all transform hover:scale-105 shadow-lg"
+				class="group inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-primary-600 font-bold rounded-xl hover:bg-accent-50 transition-all transform hover:scale-105 shadow-2xl hover:shadow-accent-500/50 duration-300"
 			>
 				Contact Us
+				<svg
+					class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M13 7l5 5m0 0l-5 5m5-5H6"
+					/>
+				</svg>
 			</a>
 			<a
 				href="/services"
-				class="inline-block px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white hover:bg-white/10 transition-all"
+				class="px-10 py-5 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all transform hover:scale-105 duration-300"
 			>
 				View Services
 			</a>
