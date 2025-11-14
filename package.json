@@ -2,6 +2,12 @@
 	"name": "akillu-website",
 	"version": "0.0.1",
 	"private": true,
+	"browserslist": [
+		"> 0.5%",
+		"last 2 versions",
+		"Firefox ESR",
+		"not dead"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
