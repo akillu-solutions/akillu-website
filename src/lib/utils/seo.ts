@@ -23,13 +23,12 @@ export function getSEOHead(data: SEOData) {
 	} = data;
 
 	const fullTitle = title.includes('Akillu Solutions') ? title : `${title} - Akillu Solutions`;
-	const canonicalUrl = canonical || SITE_URL;
 
 	return {
 		title: fullTitle,
 		description,
 		keywords,
-		canonical: canonicalUrl,
+		canonical,
 		ogImage,
 		ogType,
 		noindex
