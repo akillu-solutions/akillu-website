@@ -41,20 +41,20 @@
 							>
 						</div>
 						<div class="text-gray-400 text-sm">
-							<a href="tel:+911234567890" class="hover:text-accent-400 transition-colors"
-								>+91 123 456 7890</a
-							>
-							<span class="text-gray-500"> (India)</span>
-						</div>
-						<div class="text-gray-400 text-sm">
-							<a href="tel:+971501234567" class="hover:text-accent-400 transition-colors"
-								>+971 50 123 4567</a
+							<a href="tel:+971585617895" class="hover:text-accent-400 transition-colors"
+								>+971 58 561 7895</a
 							>
 							<span class="text-gray-500"> (UAE)</span>
 						</div>
+						<div class="text-gray-400 text-sm">
+							<a href="tel:+917904600873" class="hover:text-accent-400 transition-colors"
+								>+91 79046 00873</a
+							>
+							<span class="text-gray-500"> (India)</span>
+						</div>
 						<div class="text-gray-400 text-sm md:col-span-2 lg:col-span-1">
 							<a
-								href="https://wa.me/911234567890"
+								href="https://wa.me/971585617895"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="hover:text-[#25D366] transition-colors inline-flex items-center gap-2"

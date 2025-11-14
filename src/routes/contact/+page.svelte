@@ -57,16 +57,16 @@
 						<div>
 							<h3 class="text-lg font-semibold text-secondary-900 mb-2">Phone</h3>
 							<p class="text-secondary-600 mb-1">
-								<a href="tel:+911234567890" class="hover:text-primary-600 transition-colors"
-									>+91 123 456 7890</a
-								>
-								<span class="text-secondary-500"> (India)</span>
-							</p>
-							<p class="text-secondary-600 mb-1">
-								<a href="tel:+971501234567" class="hover:text-primary-600 transition-colors"
-									>+971 50 123 4567</a
+								<a href="tel:+971585617895" class="hover:text-primary-600 transition-colors"
+									>+971 58 561 7895</a
 								>
 								<span class="text-secondary-500"> (UAE)</span>
+							</p>
+							<p class="text-secondary-600 mb-1">
+								<a href="tel:+917904600873" class="hover:text-primary-600 transition-colors"
+									>+91 79046 00873</a
+								>
+								<span class="text-secondary-500"> (India)</span>
 							</p>
 						</div>
 					</div>
@@ -107,10 +107,10 @@
 							<h3 class="text-lg font-semibold text-secondary-900 mb-2">WhatsApp</h3>
 							<p class="text-secondary-600 mb-1">
 								<a
-									href="https://wa.me/911234567890"
+									href="https://wa.me/971585617895"
 									target="_blank"
 									rel="noopener noreferrer"
-									class="hover:text-[#25D366] transition-colors">+91 123 456 7890</a
+									class="hover:text-[#25D366] transition-colors">+971 58 561 7895</a
 								>
 							</p>
 							<p class="text-sm text-secondary-500">Chat with us instantly</p>
@@ -148,21 +148,7 @@
 					</p>
 					<div class="flex flex-col sm:flex-row gap-3">
 						<a
-							href="tel:+911234567890"
-							class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105"
-						>
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-								/>
-							</svg>
-							Call India
-						</a>
-						<a
-							href="tel:+971501234567"
+							href="tel:+971585617895"
 							class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105"
 						>
 							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -176,7 +162,21 @@
 							Call UAE
 						</a>
 						<a
-							href="https://wa.me/911234567890"
+							href="tel:+917904600873"
+							class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105"
+						>
+							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+								/>
+							</svg>
+							Call India
+						</a>
+						<a
+							href="https://wa.me/971585617895"
 							target="_blank"
 							rel="noopener noreferrer"
 							class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#20BA5A] transition-all transform hover:scale-105"

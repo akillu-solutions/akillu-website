@@ -14,7 +14,7 @@
 						'Custom software development, automation, and AI integration services for SMEs in the US, Middle East, and India.',
 					contactPoint: {
 						'@type': 'ContactPoint',
-						telephone: '+91-123-456-7890',
+						telephone: '+971-58-561-7895',
 						contactType: 'Customer Service',
 						email: 'contact@akillu.com',
 						areaServed: ['US', 'AE', 'IN'],
