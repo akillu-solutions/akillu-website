@@ -7,9 +7,90 @@
 	import { icons } from '$lib/utils/icons';
 
 	let mounted = false;
+	let currentSlide = 0;
+	let autoSlideInterval: ReturnType<typeof setInterval> | null = null;
+	let touchStartX = 0;
+	let touchEndX = 0;
+
+	const solutions = [
+		{
+			image: '/illustrations/ecommerce-mobile-app.png',
+			title: 'E-commerce Mobile App',
+			description: 'Modern mobile shopping experience with seamless checkout and product browsing.'
+		},
+		{
+			image: '/illustrations/system-dashboard.png',
+			title: 'System Dashboard',
+			description: 'Comprehensive monitoring and management dashboard for enterprise systems.'
+		},
+		{
+			image: '/illustrations/device-manager-system-observer.png',
+			title: 'Device Management',
+			description: 'Advanced device monitoring and management system with real-time analytics.'
+		},
+		{
+			image: '/illustrations/ecommerce-app-product-page.png',
+			title: 'E-commerce Platform',
+			description: 'Full-featured online store with product management and customer experience optimization.'
+		},
+		{
+			image: '/illustrations/slog-app-system-observation-manager.png',
+			title: 'System Observation',
+			description: 'Comprehensive system monitoring and observation tools for infrastructure management.'
+		},
+		{
+			image: '/illustrations/log-management-page.png',
+			title: 'Log Management',
+			description: 'Advanced log analysis and management system for security and operations monitoring.'
+		}
+	];
+
 	onMount(() => {
 		mounted = true;
+		// Auto-slide every 4 seconds
+		autoSlideInterval = setInterval(() => {
+			currentSlide = (currentSlide + 1) % solutions.length;
+		}, 4000);
+		return () => {
+			if (autoSlideInterval) {
+				clearInterval(autoSlideInterval);
+			}
+		};
 	});
+
+	function goToSlide(index: number) {
+		currentSlide = index;
+		if (autoSlideInterval) {
+			clearInterval(autoSlideInterval);
+		}
+		autoSlideInterval = setInterval(() => {
+			currentSlide = (currentSlide + 1) % solutions.length;
+		}, 4000);
+	}
+
+	function handleTouchStart(e: TouchEvent) {
+		touchStartX = e.touches[0].clientX;
+	}
+
+	function handleTouchEnd(e: TouchEvent) {
+		touchEndX = e.changedTouches[0].clientX;
+		handleSwipe();
+	}
+
+	function handleSwipe() {
+		const swipeThreshold = 50;
+		const diff = touchStartX - touchEndX;
+		
+		if (Math.abs(diff) > swipeThreshold) {
+			if (diff > 0) {
+				// Swipe left - next slide
+				currentSlide = (currentSlide + 1) % solutions.length;
+			} else {
+				// Swipe right - previous slide
+				currentSlide = (currentSlide - 1 + solutions.length) % solutions.length;
+			}
+		}
+	}
 
 	const services = [
 		{
@@ -99,20 +180,7 @@
 		></div>
 	</div>
 
-	<!-- Floating illustrations - hidden on mobile, visible on larger screens -->
-	<div class="hidden md:block absolute inset-0 opacity-5 pointer-events-none">
-		<img
-			src="/illustrations/building-product.svg"
-			alt=""
-			class="absolute top-10 left-10 w-48 h-48 lg:w-64 lg:h-64 animate-float"
-		/>
-		<img
-			src="/illustrations/automation.svg"
-			alt=""
-			class="absolute bottom-10 right-10 w-48 h-48 lg:w-64 lg:h-64 animate-float"
-			style="animation-delay: 1.5s;"
-		/>
-	</div>
+	<!-- Floating illustrations - removed to show images more prominently elsewhere -->
 
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 		<div class="max-w-6xl mx-auto">
@@ -338,7 +406,7 @@
 </section>
 
 <!-- Services Overview -->
-<section class="py-24 relative overflow-hidden section-pattern bg-white">
+<section class="py-24 relative overflow-hidden section-pattern bg-gray-50">
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 		<div class="text-center mb-20">
 			<h2 class="text-5xl sm:text-6xl font-display font-extrabold text-secondary-900 mb-6">
@@ -393,51 +461,137 @@
 <!-- Trust Indicators & Stats -->
 <section class="py-24 relative overflow-hidden bg-white">
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-		<div class="max-w-6xl mx-auto">
-			<!-- Case Studies Preview -->
+		<div class="max-w-7xl mx-auto">
+			<!-- Case Studies Preview Header -->
 			<div
-				class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 md:p-12 border-2 border-primary-200"
+				class="text-center mb-16"
 				class:opacity-0={!mounted}
 				class:translate-y-8={!mounted}
 				class:transition-all={mounted}
 				style="transition-delay: 100ms"
 			>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-					<div>
-						<h2 class="text-4xl md:text-5xl font-display font-extrabold text-secondary-900 mb-4">
-							See Our Work in <span class="text-primary-600">Action</span>
-						</h2>
-						<p class="text-xl text-secondary-600 mb-6 leading-relaxed">
-							Explore real-world case studies showcasing how we've helped SMEs transform their
-							operations with our expertise.
-						</p>
-						<a
-							href="/case-studies"
-							class="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl"
+				<h2 class="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-secondary-900 mb-6">
+					See Our Work in <span class="text-primary-600">Action</span>
+				</h2>
+				<p class="text-xl sm:text-2xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+					Explore real-world case studies showcasing how we've helped SMEs transform their
+					operations with our expertise across different industries and use cases.
+				</p>
+				<div class="mt-8">
+					<a
+						href="/case-studies"
+						class="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-primary-500/50"
+					>
+						View All Case Studies
+						<svg
+							class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
 						>
-							View Case Studies
-							<svg
-								class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M13 7l5 5m0 0l-5 5m5-5H6"
-								/>
-							</svg>
-						</a>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M13 7l5 5m0 0l-5 5m5-5H6"
+							/>
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<!-- Featured Solutions Carousel -->
+			<div class="relative md:-mx-6 lg:mx-0">
+				<!-- Carousel Container -->
+				<div
+					class="relative overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl"
+					on:touchstart={handleTouchStart}
+					on:touchend={handleTouchEnd}
+				>
+					<div
+						class="flex transition-transform duration-500 ease-in-out"
+						style="transform: translateX(-{currentSlide * 100}%)"
+					>
+						{#each solutions as solution}
+							<div class="w-full flex-shrink-0">
+								<div class="bg-white rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-secondary-200 sm:border-2 shadow-lg sm:shadow-xl mx-2 sm:mx-3 md:mx-4 h-full">
+									<div class="relative bg-gradient-to-br from-primary-50 to-accent-50 p-3 sm:p-4 md:p-6 lg:p-8 flex items-center justify-center min-h-[200px] sm:min-h-[280px] md:min-h-[380px] lg:min-h-[500px]">
+										<img
+											src={solution.image}
+											alt={solution.title}
+											class="max-w-full w-auto h-auto object-contain mx-auto max-h-[180px] sm:max-h-[260px] md:max-h-[360px] lg:max-h-[550px]"
+										/>
+									</div>
+									<div class="p-3 sm:p-4 md:p-6 lg:p-8 text-center">
+										<h3 class="text-lg sm:text-xl md:text-2xl font-display font-bold text-secondary-900 mb-1.5 sm:mb-2 md:mb-3 px-2">
+											{solution.title}
+										</h3>
+										<p class="text-sm sm:text-base md:text-lg text-secondary-600 leading-relaxed max-w-2xl mx-auto px-3 sm:px-2">
+											{solution.description}
+										</p>
+									</div>
+								</div>
+							</div>
+						{/each}
 					</div>
-					<div class="hidden md:block">
-						<img
-							src="/illustrations/building-product.svg"
-							alt="Case Studies"
-							class="w-full max-w-md mx-auto"
+				</div>
+
+				<!-- Navigation Arrows -->
+				<button
+					on:click={() => goToSlide((currentSlide - 1 + solutions.length) % solutions.length)}
+					class="hidden sm:flex absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white active:bg-white rounded-full p-2 sm:p-3 shadow-lg transition-all hover:scale-110 active:scale-95 touch-manipulation"
+					aria-label="Previous slide"
+				>
+					<svg
+						class="w-5 h-5 sm:w-6 sm:h-6 text-secondary-900"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M15 19l-7-7 7-7"
 						/>
-					</div>
+					</svg>
+				</button>
+				<button
+					on:click={() => goToSlide((currentSlide + 1) % solutions.length)}
+					class="hidden sm:flex absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white active:bg-white rounded-full p-2 sm:p-3 shadow-lg transition-all hover:scale-110 active:scale-95 touch-manipulation"
+					aria-label="Next slide"
+				>
+					<svg
+						class="w-5 h-5 sm:w-6 sm:h-6 text-secondary-900"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M9 5l7 7-7 7"
+						/>
+					</svg>
+				</button>
+
+				<!-- Dots Indicator -->
+				<div class="flex justify-center gap-1.5 sm:gap-2 mt-3 sm:mt-6 md:mt-8 px-4">
+					{#each solutions as _, index}
+						<button
+							on:click={() => goToSlide(index)}
+							class="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full transition-all touch-manipulation {currentSlide === index
+								? 'bg-primary-600 w-5 sm:w-6 md:w-8'
+								: 'bg-secondary-300 hover:bg-secondary-400 active:bg-secondary-500'}"
+							aria-label="Go to slide {index + 1}"
+						></button>
+					{/each}
+				</div>
+
+				<!-- Mobile Swipe Indicator -->
+				<div class="sm:hidden text-center mt-3 text-xs sm:text-sm text-secondary-500 px-4">
+					Swipe to navigate
 				</div>
 			</div>
 		</div>
@@ -446,110 +600,33 @@
 
 <!-- Market Focus -->
 <section
-	class="py-24 relative overflow-hidden bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 text-white"
+	class="py-16 relative overflow-hidden bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 text-white"
 >
-	<div class="absolute inset-0 opacity-5">
-		<img
-			src="/illustrations/planning.svg"
-			alt=""
-			class="absolute top-10 right-10 w-64 h-64 opacity-20"
-		/>
-		<img
-			src="/illustrations/understanding-requirements.svg"
-			alt=""
-			class="absolute bottom-10 left-10 w-64 h-64 opacity-20"
-		/>
-	</div>
+	<!-- Background decorations removed - images now shown prominently in Featured Solutions section -->
 	<div class="absolute inset-0">
 		<div class="absolute top-0 right-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl"></div>
 		<div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
 	</div>
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-			<div class="space-y-8">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+			<div class="space-y-6">
 				<div>
-					<h2 class="text-5xl sm:text-6xl font-display font-extrabold mb-6 leading-tight">
+					<h2 class="text-4xl sm:text-5xl font-display font-extrabold mb-6 leading-tight">
 						Serving Clients <span
 							class="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 to-accent-300"
 							>Internationally</span
 						>
 					</h2>
-					<p class="text-xl text-gray-300 mb-10 leading-relaxed">
-						We serve clients internationally, primarily in the US, Middle East, and India.
-					</p>
 				</div>
-				<div class="space-y-6">
-					<div
-						class="glass-dark rounded-2xl p-6 border border-white/10 hover:border-accent-500/50 transition-all group"
-					>
-						<div class="flex items-start space-x-4">
-							<div
-								class="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg"
-							>
-								<svg
-									class="w-8 h-8 text-white"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 002 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-									/>
-								</svg>
-							</div>
-							<div>
-								<h3 class="text-2xl font-bold mb-2 group-hover:text-accent-400 transition-colors">
-									United States
-								</h3>
-								<p class="text-gray-300 leading-relaxed">
-									Serving clients across the US with expertise in custom software development, AI
-									services, and cloud solutions.
-								</p>
-							</div>
-						</div>
+				<div class="space-y-2">
+					<div class="text-gray-300 text-lg">
+						United States
 					</div>
-					<div
-						class="glass-dark rounded-2xl p-6 border border-white/10 hover:border-tertiary-500/50 transition-all group"
-					>
-						<div class="flex items-start space-x-4">
-							<div
-								class="w-16 h-16 bg-gradient-to-br from-accent-500 to-tertiary-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg"
-							>
-								{@html icons.uae}
-							</div>
-							<div>
-								<h3 class="text-2xl font-bold mb-2 group-hover:text-tertiary-400 transition-colors">
-									Middle East
-								</h3>
-								<p class="text-gray-300 leading-relaxed">
-									Serving clients throughout the Middle East, bringing innovative software solutions
-									to SMEs in the region.
-								</p>
-							</div>
-						</div>
+					<div class="text-gray-300 text-lg">
+						Middle East
 					</div>
-					<div
-						class="glass-dark rounded-2xl p-6 border border-white/10 hover:border-primary-500/50 transition-all group"
-					>
-						<div class="flex items-start space-x-4">
-							<div
-								class="w-16 h-16 bg-gradient-to-br from-primary-500 to-tertiary-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg"
-							>
-								{@html icons.india}
-							</div>
-							<div>
-								<h3 class="text-2xl font-bold mb-2 group-hover:text-primary-400 transition-colors">
-									India
-								</h3>
-								<p class="text-gray-300 leading-relaxed">
-									We have an established presence serving SMEs across India with deep understanding
-									of the local market.
-								</p>
-							</div>
-						</div>
+					<div class="text-gray-300 text-lg">
+						India
 					</div>
 				</div>
 			</div>
@@ -660,15 +737,9 @@
 
 <!-- CTA Section -->
 <section
-	class="py-24 relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-accent-600 text-white"
+	class="py-24 relative overflow-hidden bg-gradient-to-br from-primary-700 via-primary-600 to-accent-600 text-white"
 >
-	<div class="absolute inset-0 opacity-10">
-		<img
-			src="/illustrations/handover.svg"
-			alt=""
-			class="absolute top-1/4 right-1/4 w-96 h-96 opacity-20"
-		/>
-	</div>
+	<!-- Background decoration removed - dashboard image already prominently shown in Hero section -->
 	<div class="absolute inset-0">
 		<div class="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
 		<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-400/10 rounded-full blur-3xl"></div>
