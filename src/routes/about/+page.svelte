@@ -290,43 +290,21 @@
 			</p>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<div class="bg-white rounded-xl p-8 shadow-lg">
-					<div class="flex items-center space-x-4 mb-6">
-						<div class="w-16 h-16 bg-primary-600 rounded-lg flex items-center justify-center">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 002 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-								/>
-							</svg>
-						</div>
-						<h3 class="text-2xl font-display font-semibold text-secondary-900">United States</h3>
-					</div>
+					<h3 class="text-2xl font-display font-semibold text-secondary-900 mb-6">United States</h3>
 					<p class="text-secondary-600 leading-relaxed">
 						Serving clients across the US with our expertise in custom software development, AI
 						services, and cloud solutions.
 					</p>
 				</div>
 				<div class="bg-white rounded-xl p-8 shadow-lg">
-					<div class="flex items-center space-x-4 mb-6">
-						<div class="w-16 h-16 bg-primary-600 rounded-lg flex items-center justify-center">
-							{@html icons.uae}
-						</div>
-						<h3 class="text-2xl font-display font-semibold text-secondary-900">Middle East</h3>
-					</div>
+					<h3 class="text-2xl font-display font-semibold text-secondary-900 mb-6">Middle East</h3>
 					<p class="text-secondary-600 leading-relaxed">
 						Serving clients throughout the Middle East, bringing innovative software solutions to
 						SMEs in the region.
 					</p>
 				</div>
 				<div class="bg-white rounded-xl p-8 shadow-lg">
-					<div class="flex items-center space-x-4 mb-6">
-						<div class="w-16 h-16 bg-primary-600 rounded-lg flex items-center justify-center">
-							{@html icons.india}
-						</div>
-						<h3 class="text-2xl font-display font-semibold text-secondary-900">India</h3>
-					</div>
+					<h3 class="text-2xl font-display font-semibold text-secondary-900 mb-6">India</h3>
 					<p class="text-secondary-600 leading-relaxed">
 						We have an established presence serving SMEs across India with deep understanding of the
 						local market.
