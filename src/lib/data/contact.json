@@ -1,0 +1,28 @@
+{
+	"email": "contact@akillu.com",
+	"phones": [
+		{
+			"number": "+971585617895",
+			"display": "+971 58 561 7895",
+			"country": "UAE",
+			"countryCode": "AE"
+		},
+		{
+			"number": "+917904600873",
+			"display": "+91 79046 00873",
+			"country": "India",
+			"countryCode": "IN"
+		}
+	],
+	"whatsapp": {
+		"number": "971585617895",
+		"display": "+971 58 561 7895"
+	},
+	"social": {
+		"linkedin": "https://linkedin.com/company/akillu-solutions"
+	},
+	"responseTime": "24 hours",
+	"areaServed": ["US", "AE", "IN"],
+	"availableLanguage": ["English"]
+}
+

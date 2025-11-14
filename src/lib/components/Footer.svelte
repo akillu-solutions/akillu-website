@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { contact, getEmailLink, getPhoneLink, getWhatsAppLink } from '$lib/utils/contact';
+	
 	const currentYear = new Date().getFullYear();
 </script>
 
@@ -36,25 +38,21 @@
 					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
 						<div class="text-gray-400 text-sm">
 							<a
-								href="mailto:contact@akillu.com"
-								class="hover:text-accent-400 transition-colors break-all">contact@akillu.com</a
+								href={getEmailLink()}
+								class="hover:text-accent-400 transition-colors break-all">{contact.email}</a
 							>
 						</div>
-						<div class="text-gray-400 text-sm">
-							<a href="tel:+971585617895" class="hover:text-accent-400 transition-colors"
-								>+971 58 561 7895</a
-							>
-							<span class="text-gray-500"> (UAE)</span>
-						</div>
-						<div class="text-gray-400 text-sm">
-							<a href="tel:+917904600873" class="hover:text-accent-400 transition-colors"
-								>+91 79046 00873</a
-							>
-							<span class="text-gray-500"> (India)</span>
-						</div>
+						{#each contact.phones as phone}
+							<div class="text-gray-400 text-sm">
+								<a href={getPhoneLink(phone)} class="hover:text-accent-400 transition-colors"
+									>{phone.display}</a
+								>
+								<span class="text-gray-500"> ({phone.country})</span>
+							</div>
+						{/each}
 						<div class="text-gray-400 text-sm md:col-span-2 lg:col-span-1">
 							<a
-								href="https://wa.me/971585617895"
+								href={getWhatsAppLink()}
 								target="_blank"
 								rel="noopener noreferrer"
 								class="hover:text-[#25D366] transition-colors inline-flex items-center gap-2"
@@ -70,7 +68,7 @@
 					</div>
 					<div class="mt-4 pt-3 border-t border-white/5">
 						<a
-							href="https://linkedin.com"
+							href={contact.social.linkedin}
 							target="_blank"
 							rel="noopener noreferrer"
 							class="inline-flex w-9 h-9 bg-white/5 hover:bg-white/10 rounded-lg items-center justify-center text-gray-400 hover:text-accent-400 transition-all group border border-white/10 hover:border-accent-500/50"

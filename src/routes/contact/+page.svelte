@@ -2,6 +2,7 @@
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import SEOHead from '$lib/components/SEOHead.svelte';
 	import StructuredData from '$lib/components/StructuredData.svelte';
+	import { contact, getEmailLink, getPhoneLink, getWhatsAppLink } from '$lib/utils/contact';
 </script>
 
 <SEOHead
@@ -54,21 +55,17 @@
 								/>
 							</svg>
 						</div>
-						<div>
-							<h3 class="text-lg font-semibold text-secondary-900 mb-2">Phone</h3>
+					<div>
+						<h3 class="text-lg font-semibold text-secondary-900 mb-2">Phone</h3>
+						{#each contact.phones as phone}
 							<p class="text-secondary-600 mb-1">
-								<a href="tel:+971585617895" class="hover:text-primary-600 transition-colors"
-									>+971 58 561 7895</a
+								<a href={getPhoneLink(phone)} class="hover:text-primary-600 transition-colors"
+									>{phone.display}</a
 								>
-								<span class="text-secondary-500"> (UAE)</span>
+								<span class="text-secondary-500"> ({phone.country})</span>
 							</p>
-							<p class="text-secondary-600 mb-1">
-								<a href="tel:+917904600873" class="hover:text-primary-600 transition-colors"
-									>+91 79046 00873</a
-								>
-								<span class="text-secondary-500"> (India)</span>
-							</p>
-						</div>
+						{/each}
+					</div>
 					</div>
 					<div class="flex items-start space-x-4">
 						<div
@@ -83,15 +80,15 @@
 								/>
 							</svg>
 						</div>
-						<div>
-							<h3 class="text-lg font-semibold text-secondary-900 mb-2">Email</h3>
-							<p class="text-secondary-600 mb-1">
-								<a href="mailto:contact@akillu.com" class="hover:text-primary-600 transition-colors"
-									>contact@akillu.com</a
-								>
-							</p>
-							<p class="text-sm text-secondary-500">We respond within 24 hours</p>
-						</div>
+					<div>
+						<h3 class="text-lg font-semibold text-secondary-900 mb-2">Email</h3>
+						<p class="text-secondary-600 mb-1">
+							<a href={getEmailLink()} class="hover:text-primary-600 transition-colors"
+								>{contact.email}</a
+							>
+						</p>
+						<p class="text-sm text-secondary-500">We respond within {contact.responseTime}</p>
+					</div>
 					</div>
 					<div class="flex items-start space-x-4">
 						<div
@@ -103,18 +100,18 @@
 								/>
 							</svg>
 						</div>
-						<div>
-							<h3 class="text-lg font-semibold text-secondary-900 mb-2">WhatsApp</h3>
-							<p class="text-secondary-600 mb-1">
-								<a
-									href="https://wa.me/971585617895"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="hover:text-[#25D366] transition-colors">+971 58 561 7895</a
-								>
-							</p>
-							<p class="text-sm text-secondary-500">Chat with us instantly</p>
-						</div>
+					<div>
+						<h3 class="text-lg font-semibold text-secondary-900 mb-2">WhatsApp</h3>
+						<p class="text-secondary-600 mb-1">
+							<a
+								href={getWhatsAppLink()}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="hover:text-[#25D366] transition-colors">{contact.whatsapp.display}</a
+							>
+						</p>
+						<p class="text-sm text-secondary-500">Chat with us instantly</p>
+					</div>
 					</div>
 				</div>
 
@@ -143,40 +140,28 @@
 				>
 					<h3 class="text-xl font-display font-semibold text-secondary-900 mb-3">Response Time</h3>
 					<p class="text-secondary-600 mb-4">
-						We typically respond to all inquiries within 24 hours during business days. For urgent
+						We typically respond to all inquiries within {contact.responseTime} during business days. For urgent
 						matters, please call us directly or message us on WhatsApp.
 					</p>
 					<div class="flex flex-col sm:flex-row gap-3">
+						{#each contact.phones as phone}
+							<a
+								href={getPhoneLink(phone)}
+								class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105"
+							>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+									/>
+								</svg>
+								Call {phone.country}
+							</a>
+						{/each}
 						<a
-							href="tel:+971585617895"
-							class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105"
-						>
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-								/>
-							</svg>
-							Call UAE
-						</a>
-						<a
-							href="tel:+917904600873"
-							class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105"
-						>
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-								/>
-							</svg>
-							Call India
-						</a>
-						<a
-							href="https://wa.me/971585617895"
+							href={getWhatsAppLink()}
 							target="_blank"
 							rel="noopener noreferrer"
 							class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#20BA5A] transition-all transform hover:scale-105"

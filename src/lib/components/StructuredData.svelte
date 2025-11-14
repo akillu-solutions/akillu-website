@@ -1,4 +1,6 @@
 <script lang="ts" context="module">
+	import { contact, getPrimaryPhoneForStructuredData } from '$lib/utils/contact';
+	
 	export function getStructuredData(type: string, customData: Record<string, any>, url: URL) {
 		const baseUrl = url.origin;
 
@@ -14,13 +16,13 @@
 						'Custom software development, automation, and AI integration services for SMEs in the US, Middle East, and India.',
 					contactPoint: {
 						'@type': 'ContactPoint',
-						telephone: '+971-58-561-7895',
+						telephone: getPrimaryPhoneForStructuredData(),
 						contactType: 'Customer Service',
-						email: 'contact@akillu.com',
-						areaServed: ['US', 'AE', 'IN'],
-						availableLanguage: ['English']
+						email: contact.email,
+						areaServed: contact.areaServed,
+						availableLanguage: contact.availableLanguage
 					},
-					sameAs: ['https://linkedin.com/company/akillu-solutions'],
+					sameAs: [contact.social.linkedin],
 					...customData
 				};
 

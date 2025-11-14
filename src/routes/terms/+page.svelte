@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SEOHead from '$lib/components/SEOHead.svelte';
+	import { contact, getEmailLink } from '$lib/utils/contact';
 </script>
 
 <SEOHead
@@ -172,7 +173,7 @@
 					</h2>
 					<p>If you have any questions about these Terms of Service, please contact us at:</p>
 					<p class="mt-4">
-						<strong>Email:</strong> contact@akillu.com<br />
+						<strong>Email:</strong> <a href={getEmailLink()} class="text-primary-600 hover:text-primary-700 underline">{contact.email}</a><br />
 						<strong>Website:</strong>
 						<a href="/contact" class="text-primary-600 hover:text-primary-700 underline"
 							>Contact Page</a
